@@ -21,11 +21,19 @@ jobs:
           cd repos/os-checker-test-suite
           # cargo doc --document-private-items
           cargo doc --document-private-items --workspace || true
+
+          cd ../os-checker
+          cargo doc --document-private-items --workspace || true
+
+          cd ..
+          mkdir deploy
+          mv os-checker-test-suite/target/doc deploy/os-checker-test-suite
+          mv os-checker/target/doc deploy/os-checker
       - name: Upload static files as artifact
         id: deployment
         uses: actions/upload-pages-artifact@v3 # or specific "vX.X.X" version tag for this action
         with:
-          path: repos/os-checker-test-suite/target/doc/
+          path: repos/deploy/
 
   # Deployment job
   deploy:
