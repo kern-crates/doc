@@ -19,7 +19,8 @@ jobs:
         id: build
         run: |
           cd repos/os-checker-test-suite
-          cargo doc --document-private-items
+          # cargo doc --document-private-items
+          cargo doc --document-private-items --workspace || true
       - name: Upload static files as artifact
         id: deployment
         uses: actions/upload-pages-artifact@v3 # or specific "vX.X.X" version tag for this action
