@@ -13,3 +13,6 @@ color-eyre = "0.6"
 tracing = "0.1"
 tracing-subscriber = { version = "0.3", features = ["env-filter"] }
 tracing-error = "0.2"
+
+[workspace]
+exclude = ["repos/**"]
