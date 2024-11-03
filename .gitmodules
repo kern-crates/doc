@@ -349,3 +349,6 @@
 [submodule "repos/kern-crates/uart16550"]
 	path = repos/kern-crates/uart16550
 	url = https://github.com/kern-crates/uart16550.git
+[submodule "repos/kern-crates/virt2slint"]
+	path = repos/kern-crates/virt2slint
+	url = https://github.com/kern-crates/virt2slint.git
