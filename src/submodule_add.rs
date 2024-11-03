@@ -56,7 +56,7 @@ fn add() -> Result<()> {
 }
 
 #[test]
-#[ignore = "should be confirmed to call this"]
+// #[ignore = "should be confirmed to call this"]
 fn remove() -> Result<()> {
     submodule_remove("repos/os-checker/plugin-cargo".into())?;
     Ok(())
