@@ -121,7 +121,10 @@ impl Manage {
                             }
                         }
                     }
-                    Err(err) => error!(?err),
+                    Err(err) => {
+                        error!(?err);
+                        continue;
+                    }
                 }
 
                 let ws_stripped = ws_dir.strip_prefix(&repos_dir)?; // user/repo/ws
