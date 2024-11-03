@@ -367,3 +367,6 @@
 [submodule "repos/kern-crates/zcore-drivers"]
 	path = repos/kern-crates/zcore-drivers
 	url = https://github.com/kern-crates/zcore-drivers.git
+[submodule "repos/kern-crates/zcore-kernel-hal"]
+	path = repos/kern-crates/zcore-kernel-hal
+	url = https://github.com/kern-crates/zcore-kernel-hal.git
