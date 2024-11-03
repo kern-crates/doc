@@ -22,3 +22,8 @@ fn submodule_add(user_repo: &str, set: &mut IndexSet<String>) -> Result<()> {
 
     Ok(())
 }
+
+#[test]
+fn add_plugin_cargo() -> Result<()> {
+    submodule_add("os-checker/plugin-cargo", &mut Default::default())
+}
