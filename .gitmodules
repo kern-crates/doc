@@ -112,3 +112,6 @@
 [submodule "repos/guoweikang/osl"]
 	path = repos/guoweikang/osl
 	url = https://github.com/guoweikang/osl.git
+[submodule "repos/kern-crates/ByteOS"]
+	path = repos/kern-crates/ByteOS
+	url = https://github.com/kern-crates/ByteOS.git
