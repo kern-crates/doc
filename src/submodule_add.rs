@@ -21,6 +21,8 @@ fn submodule_add(user_repo: &str, set: &mut IndexSet<String>) -> Result<()> {
     let path = Utf8PathBuf::from_iter([REPOS, user, repo]);
     cmd!("git", "submodule", "add", link, path).run()?;
 
+    cmd!("git", "commit", "-m", format!("submodule: add {user_repo}")).run()?;
+
     Ok(())
 }
 
@@ -47,7 +49,7 @@ fn submodule_remove(path: &Utf8Path) -> Result<()> {
 
 #[test]
 fn add() -> Result<()> {
-    submodule_add("os-checker/os-checker", &mut Default::default())
+    submodule_add("os-checker/os-checker-test-suite", &mut Default::default())
 }
 
 #[test]
