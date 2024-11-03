@@ -145,3 +145,6 @@
 [submodule "repos/kern-crates/axaddrspace"]
 	path = repos/kern-crates/axaddrspace
 	url = https://github.com/kern-crates/axaddrspace.git
+[submodule "repos/kern-crates/axbacktrace"]
+	path = repos/kern-crates/axbacktrace
+	url = https://github.com/kern-crates/axbacktrace.git
