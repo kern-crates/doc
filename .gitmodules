@@ -133,3 +133,6 @@
 [submodule "repos/kern-crates/arm_pl011"]
 	path = repos/kern-crates/arm_pl011
 	url = https://github.com/kern-crates/arm_pl011.git
+[submodule "repos/kern-crates/arm_pl031"]
+	path = repos/kern-crates/arm_pl031
+	url = https://github.com/kern-crates/arm_pl031.git
