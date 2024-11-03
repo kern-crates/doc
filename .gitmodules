@@ -379,3 +379,6 @@
 [submodule "repos/kern-crates/zcore-loader"]
 	path = repos/kern-crates/zcore-loader
 	url = https://github.com/kern-crates/zcore-loader.git
+[submodule "repos/kern-crates/zcore-tests"]
+	path = repos/kern-crates/zcore-tests
+	url = https://github.com/kern-crates/zcore-tests.git
