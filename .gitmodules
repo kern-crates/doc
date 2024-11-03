@@ -181,3 +181,6 @@
 [submodule "repos/kern-crates/cpumask"]
 	path = repos/kern-crates/cpumask
 	url = https://github.com/kern-crates/cpumask.git
+[submodule "repos/kern-crates/crate_interface"]
+	path = repos/kern-crates/crate_interface
+	url = https://github.com/kern-crates/crate_interface.git
