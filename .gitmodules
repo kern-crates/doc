@@ -154,3 +154,6 @@
 [submodule "repos/kern-crates/axdriver_crates"]
 	path = repos/kern-crates/axdriver_crates
 	url = https://github.com/kern-crates/axdriver_crates.git
+[submodule "repos/kern-crates/axerrno"]
+	path = repos/kern-crates/axerrno
+	url = https://github.com/kern-crates/axerrno.git
