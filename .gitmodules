@@ -304,3 +304,6 @@
 [submodule "repos/kern-crates/rvfs"]
 	path = repos/kern-crates/rvfs
 	url = https://github.com/kern-crates/rvfs.git
+[submodule "repos/kern-crates/safe-virtio-drivers"]
+	path = repos/kern-crates/safe-virtio-drivers
+	url = https://github.com/kern-crates/safe-virtio-drivers.git
