@@ -109,3 +109,6 @@
 [submodule "repos/elliott10/lwext4_rust"]
 	path = repos/elliott10/lwext4_rust
 	url = https://github.com/elliott10/lwext4_rust.git
+[submodule "repos/guoweikang/osl"]
+	path = repos/guoweikang/osl
+	url = https://github.com/guoweikang/osl.git
