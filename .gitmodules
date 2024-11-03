@@ -178,3 +178,6 @@
 [submodule "repos/kern-crates/cap_access"]
 	path = repos/kern-crates/cap_access
 	url = https://github.com/kern-crates/cap_access.git
+[submodule "repos/kern-crates/cpumask"]
+	path = repos/kern-crates/cpumask
+	url = https://github.com/kern-crates/cpumask.git
