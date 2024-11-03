@@ -50,6 +50,10 @@ impl Manage {
     }
 
     pub fn cargo_doc(&self) -> Result<Docs> {
+        let url_prefix = std::env::var("DOCS_URL")
+            .map(|s| s.trim_end_matches('/').to_owned())
+            .unwrap_or_default();
+
         let mut docs = UserRepoPkgCrate::with_capacity(128);
         let mut dirs = Vec::with_capacity(128);
         let current_dir = Utf8PathBuf::from_path_buf(std::env::current_dir().unwrap()).unwrap();
@@ -94,16 +98,23 @@ impl Manage {
                     }
                 }
 
-                info!(?pkg_crate_names, %doc_dir, ?doc_path);
+                let ws_stripped = ws_dir.strip_prefix(&repos_dir)?; // user/repo/ws
+                info!(?pkg_crate_names, %ws_stripped, %doc_dir, ?doc_path);
+
+                let mut urls =
+                    IndexMap::<String, Option<String>>::with_capacity(pkg_crate_names.len());
 
                 // check missing docs
-                for krate in pkg_crate_names.values() {
-                    if !doc_path.contains(krate) {
+                for (pkg, krate) in pkg_crate_names {
+                    let url = if !doc_path.contains(&krate) {
                         error!("crate `{krate}` does not generate rustdoc");
-                    }
+                        None
+                    } else {
+                        Some(format!("{url_prefix}/{ws_stripped}/{krate}"))
+                    };
+                    urls.insert(pkg, url);
                 }
 
-                let ws_stripped = ws_dir.strip_prefix(&repos_dir)?; // user/repo/ws
                 dirs.push(DocDir {
                     src: doc_dir,
                     dst: repos_dir.join(DEPLOY).join(ws_stripped),
@@ -112,11 +123,11 @@ impl Manage {
                 let (user, repo) = (data.user.as_str(), data.repo.as_str());
                 match docs.get_mut(user) {
                     Some(map_repo) => match map_repo.get_mut(repo) {
-                        Some(map_pkgs) => map_pkgs.extend(pkg_crate_names),
-                        None => _ = map_repo.insert(repo.to_owned(), pkg_crate_names),
+                        Some(map_pkgs) => map_pkgs.extend(urls),
+                        None => _ = map_repo.insert(repo.to_owned(), urls),
                     },
                     None => {
-                        let map = indexmap! { repo.to_owned() =>  pkg_crate_names };
+                        let map = indexmap! { repo.to_owned() =>urls };
                         docs.insert(user.to_owned(), map);
                     }
                 }
@@ -127,7 +138,9 @@ impl Manage {
     }
 }
 
-pub type UserRepoPkgCrate = IndexMap<String, IndexMap<String, IndexMap<String, String>>>;
+/// Crate doc is possible to be missing due to build failure
+/// The url constains workspace dir.
+pub type UserRepoPkgCrate = IndexMap<String, IndexMap<String, IndexMap<String, Option<String>>>>;
 
 pub struct Docs {
     /// docs.json
