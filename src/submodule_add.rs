@@ -24,10 +24,12 @@ fn submodule_add(user_repo: &str, set: &mut IndexSet<String>) -> Result<()> {
     Ok(())
 }
 
+#[allow(dead_code)]
 fn submodule_remove(path: &Utf8Path) -> Result<()> {
     // git submodule deinit <path>
     // git rm <path>
     // rm -rf .git/modules/<path>
+    // rm -rf <path>
 
     let _span = error_span!("submodule_remove", %path).entered();
 
