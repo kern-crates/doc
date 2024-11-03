@@ -301,3 +301,6 @@
 [submodule "repos/kern-crates/rtc"]
 	path = repos/kern-crates/rtc
 	url = https://github.com/kern-crates/rtc.git
+[submodule "repos/kern-crates/rvfs"]
+	path = repos/kern-crates/rvfs
+	url = https://github.com/kern-crates/rvfs.git
