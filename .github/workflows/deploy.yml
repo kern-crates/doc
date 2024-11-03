@@ -17,6 +17,8 @@ jobs:
         with:
           submodules: true
 
+      - uses: dtolnay/rust-toolchain@nightly
+
       - name: Set up author & committer
         run: |
           git config --global user.name "zjp-CN"
