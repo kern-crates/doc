@@ -115,3 +115,6 @@
 [submodule "repos/kern-crates/ByteOS"]
 	path = repos/kern-crates/ByteOS
 	url = https://github.com/kern-crates/ByteOS.git
+[submodule "repos/kern-crates/CSpace"]
+	path = repos/kern-crates/CSpace
+	url = https://github.com/kern-crates/CSpace.git
