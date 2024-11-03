@@ -25,5 +25,3 @@ tracing-error = "0.2"
 plugin_cargo = { git = "https://github.com/os-checker/plugin-cargo.git", package = "os-checker-plugin-cargo" }
 git2 = "0.19"
 
-[workspace]
-exclude = ["repos/**"]
