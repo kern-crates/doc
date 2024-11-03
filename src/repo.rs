@@ -13,15 +13,12 @@ impl SelfRepo {
             this: Repository::open(".")?,
             submodules: vec![],
         };
-        this.update_submodules();
+        this.update_submodules()?;
         Ok(this)
     }
 
-    pub fn vec_of_user_repo(&self) -> Vec<String> {
-        self.submodules
-            .iter()
-            .map(|m| m.user_repo.clone())
-            .collect()
+    pub fn submodules(&self) -> &[Submodule] {
+        &self.submodules
     }
 
     pub fn update_submodules(&mut self) -> Result<()> {
@@ -44,9 +41,9 @@ impl SelfRepo {
 
 pub struct Submodule {
     // relative dir path
-    local: Utf8PathBuf,
-    url: String,
-    user_repo: String,
+    pub local: Utf8PathBuf,
+    pub url: String,
+    pub user_repo: String,
 }
 
 impl Submodule {
