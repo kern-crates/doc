@@ -14,7 +14,7 @@ fn submodule_add(user_repo: &str, set: &mut IndexSet<String>) -> Result<()> {
     let (user, repo) = (&split[0], &split[1]);
     let link = git_link(user, repo);
 
-    if set.contains(&link) {
+    if set.contains(user_repo) {
         return Ok(());
     }
 
@@ -44,8 +44,8 @@ fn submodule_remove(path: &Utf8Path) -> Result<()> {
 }
 
 #[test]
-fn add_plugin_cargo() -> Result<()> {
-    submodule_add("os-checker/plugin-cargo", &mut Default::default())
+fn add() -> Result<()> {
+    submodule_add("os-checker/os-checker", &mut Default::default())
 }
 
 #[test]
