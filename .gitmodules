@@ -82,3 +82,6 @@
 [submodule "repos/arceos-org/arm_pl011"]
 	path = repos/arceos-org/arm_pl011
 	url = https://github.com/arceos-org/arm_pl011.git
+[submodule "repos/arceos-org/handler_table"]
+	path = repos/arceos-org/handler_table
+	url = https://github.com/arceos-org/handler_table.git
