@@ -1,0 +1,5 @@
+[
+  "os-checker/os-checker",
+  "os-checker/os-checker-test-suite",
+  "os-checker/plugin-cargo"
+]

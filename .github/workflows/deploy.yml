@@ -4,6 +4,10 @@ on:
   push:
     branches: [ main ]
 
+env:
+  RUST_LOG: info
+  CARGO_TERM_COLOR: always
+
 jobs:
   # Build job
   build:
@@ -13,9 +17,12 @@ jobs:
       - uses: actions/checkout@v4
         with:
           submodules: true
+
+      - name: Update submodules
+        run: |
+          cargo r -- list-test.json
+
       - name: Build static files
-        env:
-          CARGO_TERM_COLOR: always
         id: build
         run: |
           cd repos/os-checker/os-checker-test-suite
@@ -29,9 +36,10 @@ jobs:
           mkdir deploy/os-checker -p
           mv os-checker/os-checker-test-suite/target/doc deploy/os-checker/os-checker-test-suite
           mv os-checker/os-checker/target/doc deploy/os-checker/os-checker
+
       - name: Upload static files as artifact
         id: deployment
-        uses: actions/upload-pages-artifact@v3 # or specific "vX.X.X" version tag for this action
+        uses: actions/upload-pages-artifact@v3
         with:
           path: repos/deploy/
 
