@@ -265,3 +265,6 @@
 [submodule "repos/kern-crates/memory_set"]
 	path = repos/kern-crates/memory_set
 	url = https://github.com/kern-crates/memory_set.git
+[submodule "repos/kern-crates/of"]
+	path = repos/kern-crates/of
+	url = https://github.com/kern-crates/of.git
