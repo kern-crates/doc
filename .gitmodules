@@ -67,3 +67,6 @@
 [submodule "repos/arceos-org/axdriver_crates"]
 	path = repos/arceos-org/axdriver_crates
 	url = https://github.com/arceos-org/axdriver_crates.git
+[submodule "repos/arceos-org/cap_access"]
+	path = repos/arceos-org/cap_access
+	url = https://github.com/arceos-org/cap_access.git
