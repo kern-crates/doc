@@ -403,3 +403,6 @@
 [submodule "repos/shilei-massclouds/early_console"]
 	path = repos/shilei-massclouds/early_console
 	url = https://github.com/shilei-massclouds/early_console.git
+[submodule "repos/yuoo655/ext4_rs"]
+	path = repos/yuoo655/ext4_rs
+	url = https://github.com/yuoo655/ext4_rs.git
