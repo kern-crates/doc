@@ -25,3 +25,6 @@
 [submodule "repos/arceos-org/scheduler"]
 	path = repos/arceos-org/scheduler
 	url = https://github.com/arceos-org/scheduler.git
+[submodule "repos/arceos-org/cpumask"]
+	path = repos/arceos-org/cpumask
+	url = https://github.com/arceos-org/cpumask.git
