@@ -319,3 +319,6 @@
 [submodule "repos/kern-crates/sel4_ipc"]
 	path = repos/kern-crates/sel4_ipc
 	url = https://github.com/kern-crates/sel4_ipc.git
+[submodule "repos/kern-crates/sel4_task"]
+	path = repos/kern-crates/sel4_task
+	url = https://github.com/kern-crates/sel4_task.git
