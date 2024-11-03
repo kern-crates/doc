@@ -268,3 +268,6 @@
 [submodule "repos/kern-crates/of"]
 	path = repos/kern-crates/of
 	url = https://github.com/kern-crates/of.git
+[submodule "repos/kern-crates/page_table_multiarch"]
+	path = repos/kern-crates/page_table_multiarch
+	url = https://github.com/kern-crates/page_table_multiarch.git
