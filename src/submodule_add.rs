@@ -24,15 +24,20 @@ fn submodule_add(user_repo: &str, set: &mut IndexSet<String>) -> Result<()> {
     Ok(())
 }
 
-fn submodule_remove(path: &str) -> Result<()> {
+fn submodule_remove(path: &Utf8Path) -> Result<()> {
     // git submodule deinit <path>
     // git rm <path>
     // rm -rf .git/modules/<path>
 
-    let _span = error_span!("submodule_remove", path).entered();
+    let _span = error_span!("submodule_remove", %path).entered();
 
     cmd!("git", "submodule", "deinit", path).run()?;
     cmd!("git", "rm", path).run()?;
+
+    let mut git_module = Utf8PathBuf::from_iter([".git", "modules"]);
+    git_module.push(path);
+    cmd!("rm", "-rf", git_module).run()?;
+
     cmd!("rm", "-rf", path).run()?;
 
     Ok(())
@@ -44,8 +49,9 @@ fn add_plugin_cargo() -> Result<()> {
 }
 
 #[test]
+#[ignore = "should be confirmed to call this"]
 fn remove() -> Result<()> {
-    submodule_remove("repos/os-checker")?;
-    submodule_remove("repos/os-checker-test-suite")?;
+    submodule_remove("repos/os-checker".into())?;
+    submodule_remove("repos/os-checker-test-suite".into())?;
     Ok(())
 }
