@@ -28,6 +28,9 @@ jobs:
       - name: Update submodules
         run: |
           cargo r -- list-test.json
+
+      - name: Push changes to remote repo
+        run: |
           # in case it's outdated in the runner 
           git pull --rebase
           # push to remote repo if any
