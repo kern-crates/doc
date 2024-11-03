@@ -43,3 +43,6 @@
 [submodule "repos/arceos-org/crate_interface"]
 	path = repos/arceos-org/crate_interface
 	url = https://github.com/arceos-org/crate_interface.git
+[submodule "repos/arceos-org/arceos-crates"]
+	path = repos/arceos-org/arceos-crates
+	url = https://github.com/arceos-org/arceos-crates.git
