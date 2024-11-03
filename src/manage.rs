@@ -39,8 +39,6 @@ impl Manage {
                 info!(key, "append a new user_repo");
                 let repo = submodule.repo_metadata()?;
                 self.local.insert(key.clone(), repo);
-            } else {
-                warn!(key, "already exists a key");
             }
         }
 
@@ -52,6 +50,6 @@ impl Manage {
 fn update_a_user_repo() -> Result<()> {
     plugin_cargo::logger::init();
     let mut manage = Manage::new()?;
-    manage.process("os-checker/os-checker-test-suite")?;
+    manage.process("os-checker/plugin-cargo")?;
     Ok(())
 }
