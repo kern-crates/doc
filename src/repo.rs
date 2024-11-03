@@ -11,7 +11,7 @@ pub struct Submodule {
     // relative dir path
     local: Utf8PathBuf,
     url: String,
-    repo: repo::Repo,
+    user_repo: String,
 }
 
 impl Submodule {
@@ -22,9 +22,19 @@ impl Submodule {
         let user_repo = url
             .strip_prefix("https://github.com/")
             .with_context(|| format!("{url} can't strip prefix `https://github.com/`"))?;
-        let user_repo = user_repo.strip_suffix(".git").unwrap_or(user_repo);
-        let repo = repo::Repo::new(user_repo, repo::RepoSource::Local(local.clone()))?;
-        Ok(Self { local, url, repo })
+        let user_repo = user_repo
+            .strip_suffix(".git")
+            .unwrap_or(user_repo)
+            .to_owned();
+        Ok(Self {
+            local,
+            url,
+            user_repo,
+        })
+    }
+
+    pub fn repo_metadata(&self) -> Result<repo::Repo> {
+        repo::Repo::new(&self.user_repo, repo::RepoSource::Local(self.local.clone()))
     }
 }
 
@@ -47,8 +57,11 @@ fn parse_submodules() -> Result<()> {
     let v: Vec<_> = repo
         .submodules
         .iter()
-        .map(|m| (&m.repo.user, &m.repo.repo, &m.local))
-        .collect();
+        .map(|m| {
+            let meta = m.repo_metadata()?;
+            Ok((meta.user, meta.repo, &m.local))
+        })
+        .collect::<Result<_>>()?;
     dbg!(&v);
 
     Ok(())
