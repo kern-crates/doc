@@ -310,3 +310,6 @@
 [submodule "repos/kern-crates/scheduler"]
 	path = repos/kern-crates/scheduler
 	url = https://github.com/kern-crates/scheduler.git
+[submodule "repos/kern-crates/sel4_common"]
+	path = repos/kern-crates/sel4_common
+	url = https://github.com/kern-crates/sel4_common.git
