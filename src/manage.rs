@@ -38,11 +38,15 @@ impl Manage {
         self.self_repo.update_submodules()?;
 
         for submodule in self.self_repo.submodules() {
-            let key = &submodule.user_repo;
-            if !self.local.contains_key(key) {
-                info!(key, "append a new user_repo");
-                let repo = submodule.repo_metadata()?;
-                self.local.insert(key.clone(), repo);
+            let user_repo = &submodule.user_repo;
+            let _span = error_span!("update_submodules_insert", user_repo).entered();
+
+            if !self.local.contains_key(user_repo) {
+                info!(user_repo, "append a new user_repo");
+                match submodule.repo_metadata() {
+                    Ok(repo) => _ = self.local.insert(user_repo.clone(), repo),
+                    Err(err) => error!(?err, "unable to read metadata"),
+                }
             }
         }
 
