@@ -328,3 +328,6 @@
 [submodule "repos/kern-crates/spinlock"]
 	path = repos/kern-crates/spinlock
 	url = https://github.com/kern-crates/spinlock.git
+[submodule "repos/kern-crates/starry-next"]
+	path = repos/kern-crates/starry-next
+	url = https://github.com/kern-crates/starry-next.git
