@@ -1,5 +1,7 @@
-mod logger;
+use plugin_cargo::{logger, prelude::*};
 
-fn main() {
+fn main() -> Result<()> {
     logger::init();
+
+    Ok(())
 }
