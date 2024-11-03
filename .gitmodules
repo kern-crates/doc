@@ -373,9 +373,6 @@
 [submodule "repos/qclic/fdt-parser"]
 	path = repos/qclic/fdt-parser
 	url = https://github.com/qclic/fdt-parser.git
-[submodule "repos/shilei-massclouds/axdtb"]
-	path = repos/shilei-massclouds/axdtb
-	url = https://github.com/shilei-massclouds/axdtb.git
 [submodule "repos/shilei-massclouds/early_console"]
 	path = repos/shilei-massclouds/early_console
 	url = https://github.com/shilei-massclouds/early_console.git
