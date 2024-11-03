@@ -214,3 +214,6 @@
 [submodule "repos/kern-crates/linked_list_r4l"]
 	path = repos/kern-crates/linked_list_r4l
 	url = https://github.com/kern-crates/linked_list_r4l.git
+[submodule "repos/kern-crates/linked_list_r4l-1"]
+	path = repos/kern-crates/linked_list_r4l-1
+	url = https://github.com/kern-crates/linked_list_r4l-1.git
