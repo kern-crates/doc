@@ -271,3 +271,6 @@
 [submodule "repos/kern-crates/page_table_multiarch"]
 	path = repos/kern-crates/page_table_multiarch
 	url = https://github.com/kern-crates/page_table_multiarch.git
+[submodule "repos/kern-crates/pager"]
+	path = repos/kern-crates/pager
+	url = https://github.com/kern-crates/pager.git
