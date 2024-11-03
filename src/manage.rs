@@ -132,8 +132,11 @@ pub struct Docs {
 
 impl Docs {
     pub fn finish(&self) -> Result<()> {
-        info!(doc = serde_json::to_string_pretty(&self.docs)?);
-        info!(dirs = ?self.dirs);
+        info!(
+            "doc = {}\ndirs = {:#?}",
+            serde_json::to_string_pretty(&self.docs)?,
+            self.dirs
+        );
 
         for dir in &self.dirs {
             let parent = dir.dst.parent().unwrap();
