@@ -391,3 +391,6 @@
 [submodule "repos/kern-crates/zcore-zircon-user"]
 	path = repos/kern-crates/zcore-zircon-user
 	url = https://github.com/kern-crates/zcore-zircon-user.git
+[submodule "repos/qclic/fdt-parser"]
+	path = repos/qclic/fdt-parser
+	url = https://github.com/qclic/fdt-parser.git
