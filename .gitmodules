@@ -325,3 +325,6 @@
 [submodule "repos/kern-crates/sel4_vspace"]
 	path = repos/kern-crates/sel4_vspace
 	url = https://github.com/kern-crates/sel4_vspace.git
+[submodule "repos/kern-crates/spinlock"]
+	path = repos/kern-crates/spinlock
+	url = https://github.com/kern-crates/spinlock.git
