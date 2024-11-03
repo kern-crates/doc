@@ -34,9 +34,6 @@
 [submodule "repos/arceos-org/memory_set"]
 	path = repos/arceos-org/memory_set
 	url = https://github.com/arceos-org/memory_set.git
-[submodule "repos/arceos-org/starry-next"]
-	path = repos/arceos-org/starry-next
-	url = https://github.com/arceos-org/starry-next.git
 [submodule "repos/arceos-org/arm_gicv2"]
 	path = repos/arceos-org/arm_gicv2
 	url = https://github.com/arceos-org/arm_gicv2.git
