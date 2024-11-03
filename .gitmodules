@@ -106,3 +106,6 @@
 [submodule "repos/elliott10/e1000-driver"]
 	path = repos/elliott10/e1000-driver
 	url = https://github.com/elliott10/e1000-driver.git
+[submodule "repos/elliott10/lwext4_rust"]
+	path = repos/elliott10/lwext4_rust
+	url = https://github.com/elliott10/lwext4_rust.git
