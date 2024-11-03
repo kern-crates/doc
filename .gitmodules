@@ -208,3 +208,6 @@
 [submodule "repos/kern-crates/lazyinit"]
 	path = repos/kern-crates/lazyinit
 	url = https://github.com/kern-crates/lazyinit.git
+[submodule "repos/kern-crates/libc-test"]
+	path = repos/kern-crates/libc-test
+	url = https://github.com/kern-crates/libc-test.git
