@@ -121,3 +121,6 @@
 [submodule "repos/kern-crates/allocator"]
 	path = repos/kern-crates/allocator
 	url = https://github.com/kern-crates/allocator.git
+[submodule "repos/kern-crates/arceos"]
+	path = repos/kern-crates/arceos
+	url = https://github.com/kern-crates/arceos.git
