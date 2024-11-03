@@ -196,3 +196,6 @@
 [submodule "repos/kern-crates/handler_table"]
 	path = repos/kern-crates/handler_table
 	url = https://github.com/kern-crates/handler_table.git
+[submodule "repos/kern-crates/int_ratio"]
+	path = repos/kern-crates/int_ratio
+	url = https://github.com/kern-crates/int_ratio.git
