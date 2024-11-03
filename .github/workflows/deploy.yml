@@ -7,6 +7,7 @@ on:
 env:
   RUST_LOG: info
   CARGO_TERM_COLOR: always
+  TAG_REPOS_DEFAULT: cache-v8.redb
   DOCS_URL: https://os-checker.github.io/docs
 
 jobs:
@@ -28,7 +29,9 @@ jobs:
 
       - name: Update submodules
         run: |
-          cargo r -- list-test.json
+          wget https://github.com/os-checker/database/releases/download/${{ env.TAG_REPOS_DEFAULT }}/repos-default.json
+          jq 'to_entries | map(.key) + ["os-checker/os-checker"]' repos-default.json > list.json
+          cargo r -- #list-test.json
 
       - name: Push changes to remote repo
         run: |
