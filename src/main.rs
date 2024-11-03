@@ -19,9 +19,7 @@ fn main() -> Result<()> {
     let list: Vec<String> = serde_json::from_slice(&std::fs::read(&list_json)?)?;
 
     let mut manage = manage::Manage::new()?;
-    for user_repo in &list {
-        manage.process(user_repo)?;
-    }
+    manage.update_submodules(&list)?;
 
     Ok(())
 }

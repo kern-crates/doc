@@ -26,9 +26,11 @@ impl Manage {
         Ok(Manage { self_repo, local })
     }
 
-    pub fn process(&mut self, user_repo: &str) -> Result<()> {
+    pub fn update_submodules(&mut self, v_user_repo: &[String]) -> Result<()> {
         // add and commit a new submodule if applies
-        submodule_add(user_repo, &mut self.local)?;
+        for user_repo in v_user_repo {
+            submodule_add(user_repo, &mut self.local)?;
+        }
 
         // update submodules
         self.self_repo.update_submodules()?;
@@ -51,6 +53,6 @@ impl Manage {
 fn update_a_user_repo() -> Result<()> {
     plugin_cargo::logger::init();
     let mut manage = Manage::new()?;
-    manage.process("os-checker/plugin-cargo")?;
+    manage.update_submodules("os-checker/plugin-cargo")?;
     Ok(())
 }
