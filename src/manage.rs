@@ -1,7 +1,7 @@
-use crate::{repo::SelfRepo, submodule_add::submodule_add};
+use crate::{repo::SelfRepo, submodule_add::submodule_add, DEPLOY, REPOS};
 use duct::cmd;
 use indexmap::{indexmap, IndexMap, IndexSet};
-use plugin_cargo::{prelude::*, repo::Repo};
+use plugin_cargo::{prelude::*, repo::Repo, write_json};
 
 /// This map is a collection of user_repo string, and
 /// must ensure there exist a local repo.
@@ -49,8 +49,11 @@ impl Manage {
         Ok(())
     }
 
-    pub fn cargo_doc(&self) -> Result<UserRepoPkgCrate> {
+    pub fn cargo_doc(&self) -> Result<Docs> {
         let mut docs = UserRepoPkgCrate::with_capacity(128);
+        let mut dirs = Vec::with_capacity(128);
+        let current_dir = Utf8PathBuf::from_path_buf(std::env::current_dir().unwrap()).unwrap();
+        let repos_dir = current_dir.join(REPOS);
 
         // cargo doc --document-private-items --workspace --no-deps
         for (user_repo, data) in &self.local {
@@ -82,6 +85,7 @@ impl Manage {
                 let mut doc_path = IndexSet::with_capacity(pkg_crate_names.len());
 
                 let doc_dir = meta.target_directory.join("doc");
+
                 for entry in doc_dir.read_dir_utf8()? {
                     let entry = entry?;
                     doc_path.insert(entry.file_name().to_owned());
@@ -94,24 +98,66 @@ impl Manage {
                     }
                 }
 
-                match docs.get_mut(&data.user) {
-                    Some(repo) => match repo.get_mut(&data.repo) {
-                        Some(pkgs) => pkgs.extend(pkg_crate_names),
-                        None => _ = repo.insert(data.repo.clone(), pkg_crate_names),
+                let ws_stripped = ws_dir.strip_prefix(&repos_dir)?; // user/repo/ws
+                dirs.push(DocDir {
+                    src: doc_dir.join("doc"),
+                    dst: repos_dir.join(DEPLOY).join(ws_stripped),
+                });
+
+                let (user, repo) = (data.user.as_str(), data.repo.as_str());
+                match docs.get_mut(user) {
+                    Some(map_repo) => match map_repo.get_mut(repo) {
+                        Some(map_pkgs) => map_pkgs.extend(pkg_crate_names),
+                        None => _ = map_repo.insert(repo.to_owned(), pkg_crate_names),
                     },
                     None => {
-                        let map = indexmap! { data.repo.clone() =>  pkg_crate_names };
-                        docs.insert(data.user.clone(), map);
+                        let map = indexmap! { repo.to_owned() =>  pkg_crate_names };
+                        docs.insert(user.to_owned(), map);
                     }
                 }
             }
         }
 
-        Ok(docs)
+        Ok(Docs { docs, dirs })
     }
 }
 
 pub type UserRepoPkgCrate = IndexMap<String, IndexMap<String, IndexMap<String, String>>>;
+
+pub struct Docs {
+    /// docs.json
+    docs: UserRepoPkgCrate,
+    dirs: Vec<DocDir>,
+}
+
+impl Docs {
+    pub fn finish(&self) -> Result<()> {
+        info!(doc = serde_json::to_string_pretty(&self.docs)?);
+        info!(dirs = ?self.dirs);
+
+        for dir in &self.dirs {
+            let parent = dir.dst.parent().unwrap();
+            std::fs::create_dir_all(parent)?;
+
+            let src = &*dir.src;
+            info!("mv {src} {parent}");
+            cmd!("mv", src, parent).run()?;
+        }
+
+        write_json(
+            &Utf8PathBuf::from_iter([REPOS, "deploy", "docs.json"]),
+            &self.docs,
+        )?;
+
+        Ok(())
+    }
+}
+
+#[derive(Debug)]
+struct DocDir {
+    src: Utf8PathBuf,
+    dst: Utf8PathBuf,
+}
 
 #[test]
 #[ignore = "should be comfirmed to call this"]
