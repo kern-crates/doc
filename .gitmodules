@@ -382,3 +382,6 @@
 [submodule "repos/kern-crates/zcore-tests"]
 	path = repos/kern-crates/zcore-tests
 	url = https://github.com/kern-crates/zcore-tests.git
+[submodule "repos/kern-crates/zcore-zircon-object"]
+	path = repos/kern-crates/zcore-zircon-object
+	url = https://github.com/kern-crates/zcore-zircon-object.git
