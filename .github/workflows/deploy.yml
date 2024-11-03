@@ -18,17 +18,17 @@ jobs:
           CARGO_TERM_COLOR: always
         id: build
         run: |
-          cd repos/os-checker-test-suite
+          cd repos/os-checker/os-checker-test-suite
           # cargo doc --document-private-items
           cargo doc --document-private-items --workspace --no-deps || true
 
           cd ../os-checker
           cargo doc --document-private-items --workspace --no-deps || true
 
-          cd ..
+          cd ../..
           mkdir deploy
-          mv os-checker-test-suite/target/doc deploy/os-checker-test-suite
-          mv os-checker/target/doc deploy/os-checker
+          mv os-checker/os-checker-test-suite/target/doc deploy/os-checker/os-checker-test-suite
+          mv os-checker/os-checker/target/doc deploy/os-checker/os-checker
       - name: Upload static files as artifact
         id: deployment
         uses: actions/upload-pages-artifact@v3 # or specific "vX.X.X" version tag for this action
