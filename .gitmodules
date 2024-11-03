@@ -91,3 +91,6 @@
 [submodule "repos/Byte-OS/lose-net-stack"]
 	path = repos/Byte-OS/lose-net-stack
 	url = https://github.com/Byte-OS/lose-net-stack.git
+[submodule "repos/Byte-OS/polyhal"]
+	path = repos/Byte-OS/polyhal
+	url = https://github.com/Byte-OS/polyhal.git
