@@ -88,6 +88,3 @@
 [submodule "repos/arceos-org/kernel_guard"]
 	path = repos/arceos-org/kernel_guard
 	url = https://github.com/arceos-org/kernel_guard.git
-[submodule "repos/arceos-org/starry-next"]
-	path = repos/arceos-org/starry-next
-	url = https://github.com/arceos-org/starry-next.git
