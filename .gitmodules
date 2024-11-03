@@ -343,3 +343,6 @@
 [submodule "repos/kern-crates/tracer"]
 	path = repos/kern-crates/tracer
 	url = https://github.com/kern-crates/tracer.git
+[submodule "repos/kern-crates/tuple_for_each"]
+	path = repos/kern-crates/tuple_for_each
+	url = https://github.com/kern-crates/tuple_for_each.git
