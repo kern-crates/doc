@@ -40,3 +40,6 @@
 [submodule "repos/arceos-org/arm_gicv2"]
 	path = repos/arceos-org/arm_gicv2
 	url = https://github.com/arceos-org/arm_gicv2.git
+[submodule "repos/arceos-org/crate_interface"]
+	path = repos/arceos-org/crate_interface
+	url = https://github.com/arceos-org/crate_interface.git
