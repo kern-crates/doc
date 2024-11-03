@@ -147,7 +147,7 @@ impl Docs {
             let parent = dir.dst.parent().unwrap();
             std::fs::create_dir_all(parent)?;
 
-            let DocDir { src, dst } = dir.src;
+            let DocDir { src, dst } = dir;
             info!("mv {src} {dst}");
             cmd!("mv", src, dst).run()?;
         }
