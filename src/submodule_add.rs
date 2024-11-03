@@ -1,6 +1,5 @@
 use crate::{manage::Local, REPOS};
 use duct::cmd;
-use indexmap::IndexSet;
 use plugin_cargo::prelude::*;
 
 fn git_link(user: &str, repo: &str) -> String {
@@ -44,6 +43,9 @@ fn submodule_remove(path: &Utf8Path) -> Result<()> {
 
     cmd!("rm", "-rf", path).run()?;
 
+    let msg = format!("submodule: remove {path}");
+    cmd!("git", "commit", "-m", msg).run()?;
+
     Ok(())
 }
 
@@ -56,7 +58,6 @@ fn add() -> Result<()> {
 #[test]
 #[ignore = "should be confirmed to call this"]
 fn remove() -> Result<()> {
-    submodule_remove("repos/os-checker".into())?;
-    submodule_remove("repos/os-checker-test-suite".into())?;
+    submodule_remove("repos/os-checker/plugin-cargo".into())?;
     Ok(())
 }

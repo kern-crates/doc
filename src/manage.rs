@@ -47,6 +47,7 @@ impl Manage {
 }
 
 #[test]
+// #[ignore = "should be comfirmed to call this"]
 fn update_a_user_repo() -> Result<()> {
     plugin_cargo::logger::init();
     let mut manage = Manage::new()?;
