@@ -7,6 +7,15 @@ pub struct SelfRepo {
     submodules: Vec<Submodule>,
 }
 
+impl SelfRepo {
+    pub fn vec_of_user_repo(&self) -> Vec<String> {
+        self.submodules
+            .iter()
+            .map(|m| m.user_repo.clone())
+            .collect()
+    }
+}
+
 pub struct Submodule {
     // relative dir path
     local: Utf8PathBuf,

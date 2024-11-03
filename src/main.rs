@@ -6,6 +6,8 @@ extern crate tracing;
 mod repo;
 mod submodule_add;
 
+mod manage;
+
 const REPOS: &str = "repos";
 
 fn main() -> Result<()> {
