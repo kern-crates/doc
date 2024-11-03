@@ -184,3 +184,6 @@
 [submodule "repos/kern-crates/crate_interface"]
 	path = repos/kern-crates/crate_interface
 	url = https://github.com/kern-crates/crate_interface.git
+[submodule "repos/kern-crates/dw_apb_uart"]
+	path = repos/kern-crates/dw_apb_uart
+	url = https://github.com/kern-crates/dw_apb_uart.git
