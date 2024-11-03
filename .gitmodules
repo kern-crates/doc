@@ -259,3 +259,6 @@
 [submodule "repos/kern-crates/loongArch64"]
 	path = repos/kern-crates/loongArch64
 	url = https://github.com/kern-crates/loongArch64.git
+[submodule "repos/kern-crates/lwext4"]
+	path = repos/kern-crates/lwext4
+	url = https://github.com/kern-crates/lwext4.git
