@@ -394,3 +394,6 @@
 [submodule "repos/qclic/fdt-parser"]
 	path = repos/qclic/fdt-parser
 	url = https://github.com/qclic/fdt-parser.git
+[submodule "repos/shilei-massclouds/arch_boot"]
+	path = repos/shilei-massclouds/arch_boot
+	url = https://github.com/shilei-massclouds/arch_boot.git
