@@ -1,4 +1,4 @@
-use crate::repo::SelfRepo;
+use crate::{repo::SelfRepo, submodule_add::submodule_add};
 use indexmap::IndexMap;
 use plugin_cargo::{prelude::*, repo::Repo};
 
@@ -24,5 +24,24 @@ impl Manage {
             })
             .collect::<Result<_>>()?;
         Ok(Manage { self_repo, local })
+    }
+
+    pub fn process(&mut self, user_repo: &str) -> Result<()> {
+        // add and commit a new submodule if applies
+        submodule_add(user_repo, &mut self.local)?;
+
+        // update submodules
+        self.self_repo.update_submodules()?;
+
+        for submodule in self.self_repo.submodules() {
+            let key = &submodule.user_repo;
+            if !self.local.contains_key(key) {
+                info!("append a new user_repo: {key}");
+                let repo = submodule.repo_metadata()?;
+                self.local.insert(key.clone(), repo);
+            }
+        }
+
+        Ok(())
     }
 }
