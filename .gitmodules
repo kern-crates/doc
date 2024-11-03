@@ -202,3 +202,6 @@
 [submodule "repos/kern-crates/kernel_guard"]
 	path = repos/kern-crates/kernel_guard
 	url = https://github.com/kern-crates/kernel_guard.git
+[submodule "repos/kern-crates/kspin"]
+	path = repos/kern-crates/kspin
+	url = https://github.com/kern-crates/kspin.git
