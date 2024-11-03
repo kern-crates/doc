@@ -319,9 +319,6 @@
 [submodule "repos/kern-crates/spinlock"]
 	path = repos/kern-crates/spinlock
 	url = https://github.com/kern-crates/spinlock.git
-[submodule "repos/kern-crates/starry-next"]
-	path = repos/kern-crates/starry-next
-	url = https://github.com/kern-crates/starry-next.git
 [submodule "repos/kern-crates/syscall-table"]
 	path = repos/kern-crates/syscall-table
 	url = https://github.com/kern-crates/syscall-table.git
