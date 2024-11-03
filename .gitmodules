@@ -97,3 +97,6 @@
 [submodule "repos/Starry-OS/Starry"]
 	path = repos/Starry-OS/Starry
 	url = https://github.com/Starry-OS/Starry.git
+[submodule "repos/ZR233/arm-gic-driver"]
+	path = repos/ZR233/arm-gic-driver
+	url = https://github.com/ZR233/arm-gic-driver.git
