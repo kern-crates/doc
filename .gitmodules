@@ -169,3 +169,6 @@
 [submodule "repos/kern-crates/axprocess"]
 	path = repos/kern-crates/axprocess
 	url = https://github.com/kern-crates/axprocess.git
+[submodule "repos/kern-crates/axvcpu"]
+	path = repos/kern-crates/axvcpu
+	url = https://github.com/kern-crates/axvcpu.git
