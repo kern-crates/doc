@@ -1,4 +1,4 @@
-use plugin_cargo::{logger, prelude::*};
+use plugin_cargo::{logger, prelude::*, write_json};
 
 #[macro_use]
 extern crate tracing;
@@ -20,6 +20,12 @@ fn main() -> Result<()> {
 
     let mut manage = manage::Manage::new()?;
     manage.update_submodules(&list)?;
+
+    let docs = manage.cargo_doc()?;
+    write_json(
+        &Utf8PathBuf::from_iter([REPOS, "deploy", "docs.json"]),
+        &docs,
+    )?;
 
     Ok(())
 }

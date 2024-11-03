@@ -7,8 +7,6 @@ fn git_link(user: &str, repo: &str) -> String {
 }
 
 pub fn submodule_add(user_repo: &str, set: &mut Local) -> Result<()> {
-    let _span = error_span!("submodule_add", user_repo).entered();
-
     let split: Vec<_> = user_repo.split("/").collect();
     let (user, repo) = (&split[0], &split[1]);
     let link = git_link(user, repo);
