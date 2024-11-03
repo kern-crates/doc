@@ -10,9 +10,7 @@ env:
   DOCS_URL: https://os-checker.github.io/docs
 
 jobs:
-  # Build job
   build:
-    # Specify runner +  build & upload the static files as an artifact
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -36,21 +34,6 @@ jobs:
           git pull --rebase
           # push to remote repo if any
           git push && true
-
-      # - name: Build static files
-      #   id: build
-      #   run: |
-      #     cd repos/os-checker/os-checker-test-suite
-      #     # cargo doc --document-private-items
-      #     cargo doc --document-private-items --workspace --no-deps || true
-      #
-      #     cd ../os-checker
-      #     cargo doc --document-private-items --workspace --no-deps || true
-      #
-      #     cd ../..
-      #     mkdir deploy/os-checker -p
-      #     mv os-checker/os-checker-test-suite/target/doc deploy/os-checker/os-checker-test-suite
-      #     mv os-checker/os-checker/target/doc deploy/os-checker/os-checker
 
       - name: Upload static files as artifact
         id: deployment
