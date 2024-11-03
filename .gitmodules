@@ -361,3 +361,6 @@
 [submodule "repos/kern-crates/x86_vcpu"]
 	path = repos/kern-crates/x86_vcpu
 	url = https://github.com/kern-crates/x86_vcpu.git
+[submodule "repos/kern-crates/zCore"]
+	path = repos/kern-crates/zCore
+	url = https://github.com/kern-crates/zCore.git
