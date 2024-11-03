@@ -114,6 +114,7 @@ impl Manage {
                     };
                     urls.insert(pkg, url);
                 }
+                urls.sort_unstable_keys();
 
                 dirs.push(DocDir {
                     src: doc_dir,
@@ -134,6 +135,8 @@ impl Manage {
             }
         }
 
+        docs.values_mut().for_each(|m| m.sort_unstable_keys());
+        docs.sort_unstable_keys();
         Ok(Docs { docs, dirs })
     }
 }
