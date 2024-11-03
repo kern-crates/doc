@@ -31,7 +31,7 @@ jobs:
       - name: Update submodules
         run: |
           wget https://github.com/os-checker/database/releases/download/${{ env.TAG_REPOS_DEFAULT }}/repos-default.json
-          jq 'to_entries | map(.key) + ["os-checker/os-checker"]' repos-default.json > list.json
+          jq 'del(."qclic/e1000e-frame") | del(."AsyncModules/embassy-priority") | del(."kern-crates/rust-sel4") | to_entries | map(.key) + ["os-checker/os-checker"]' repos-default.json > list.json
           cargo r -- #list-test.json
 
       - name: Push changes to remote repo
