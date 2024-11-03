@@ -118,3 +118,6 @@
 [submodule "repos/kern-crates/CSpace"]
 	path = repos/kern-crates/CSpace
 	url = https://github.com/kern-crates/CSpace.git
+[submodule "repos/kern-crates/allocator"]
+	path = repos/kern-crates/allocator
+	url = https://github.com/kern-crates/allocator.git
