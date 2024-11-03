@@ -385,3 +385,6 @@
 [submodule "repos/kern-crates/zcore-zircon-object"]
 	path = repos/kern-crates/zcore-zircon-object
 	url = https://github.com/kern-crates/zcore-zircon-object.git
+[submodule "repos/kern-crates/zcore-zircon-syscall"]
+	path = repos/kern-crates/zcore-zircon-syscall
+	url = https://github.com/kern-crates/zcore-zircon-syscall.git
