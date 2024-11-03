@@ -334,3 +334,6 @@
 [submodule "repos/kern-crates/syscall-table"]
 	path = repos/kern-crates/syscall-table
 	url = https://github.com/kern-crates/syscall-table.git
+[submodule "repos/kern-crates/test-test-repo"]
+	path = repos/kern-crates/test-test-repo
+	url = https://github.com/kern-crates/test-test-repo.git
