@@ -313,3 +313,6 @@
 [submodule "repos/kern-crates/sel4_common"]
 	path = repos/kern-crates/sel4_common
 	url = https://github.com/kern-crates/sel4_common.git
+[submodule "repos/kern-crates/sel4_cspace"]
+	path = repos/kern-crates/sel4_cspace
+	url = https://github.com/kern-crates/sel4_cspace.git
