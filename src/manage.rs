@@ -112,11 +112,16 @@ impl Manage {
 
                 let doc_dir = meta.target_directory.join("doc");
 
-                for entry in doc_dir.read_dir_utf8()? {
-                    let entry = entry?;
-                    if entry.path().is_dir() {
-                        doc_path.insert(entry.file_name().to_owned());
+                match doc_dir.read_dir_utf8() {
+                    Ok(dir) => {
+                        for entry in dir {
+                            let entry = entry?;
+                            if entry.path().is_dir() {
+                                doc_path.insert(entry.file_name().to_owned());
+                            }
+                        }
                     }
+                    Err(err) => error!(?err),
                 }
 
                 let ws_stripped = ws_dir.strip_prefix(&repos_dir)?; // user/repo/ws
