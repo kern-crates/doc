@@ -277,3 +277,6 @@
 [submodule "repos/kern-crates/pconst"]
 	path = repos/kern-crates/pconst
 	url = https://github.com/kern-crates/pconst.git
+[submodule "repos/kern-crates/percpu"]
+	path = repos/kern-crates/percpu
+	url = https://github.com/kern-crates/percpu.git
