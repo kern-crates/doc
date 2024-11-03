@@ -85,3 +85,6 @@
 [submodule "repos/arceos-org/handler_table"]
 	path = repos/arceos-org/handler_table
 	url = https://github.com/arceos-org/handler_table.git
+[submodule "repos/arceos-org/flatten_objects"]
+	path = repos/arceos-org/flatten_objects
+	url = https://github.com/arceos-org/flatten_objects.git
