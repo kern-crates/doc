@@ -31,3 +31,6 @@
 [submodule "repos/arceos-org/page_table_multiarch"]
 	path = repos/arceos-org/page_table_multiarch
 	url = https://github.com/arceos-org/page_table_multiarch.git
+[submodule "repos/arceos-org/memory_set"]
+	path = repos/arceos-org/memory_set
+	url = https://github.com/arceos-org/memory_set.git
