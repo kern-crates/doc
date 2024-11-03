@@ -397,3 +397,6 @@
 [submodule "repos/shilei-massclouds/arch_boot"]
 	path = repos/shilei-massclouds/arch_boot
 	url = https://github.com/shilei-massclouds/arch_boot.git
+[submodule "repos/shilei-massclouds/axdtb"]
+	path = repos/shilei-massclouds/axdtb
+	url = https://github.com/shilei-massclouds/axdtb.git
