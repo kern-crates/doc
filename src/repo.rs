@@ -38,3 +38,17 @@ fn self_repo() -> Result<SelfRepo> {
 
     Ok(SelfRepo { this, submodules })
 }
+
+#[test]
+fn parse_submodules() -> Result<()> {
+    let repo = self_repo()?;
+
+    let v: Vec<_> = repo
+        .submodules
+        .iter()
+        .map(|m| (&m.repo.user, &m.repo.repo))
+        .collect();
+    dbg!(&v);
+
+    Ok(())
+}
