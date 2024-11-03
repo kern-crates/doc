@@ -298,3 +298,6 @@
 [submodule "repos/kern-crates/riscv_vcpu"]
 	path = repos/kern-crates/riscv_vcpu
 	url = https://github.com/kern-crates/riscv_vcpu.git
+[submodule "repos/kern-crates/rtc"]
+	path = repos/kern-crates/rtc
+	url = https://github.com/kern-crates/rtc.git
