@@ -18,12 +18,17 @@ impl Manage {
         let local = self_repo
             .submodules()
             .iter()
-            .map(|m| {
+            .filter_map(|m| {
                 let user_repo = m.user_repo.clone();
-                let repo = m.repo_metadata()?;
-                Ok((user_repo, repo))
+                match m.repo_metadata() {
+                    Ok(repo) => Some((user_repo, repo)),
+                    Err(err) => {
+                        error!(user_repo, ?err, "unable to read metadata");
+                        None
+                    }
+                }
             })
-            .collect::<Result<_>>()?;
+            .collect();
         Ok(Manage { self_repo, local })
     }
 
