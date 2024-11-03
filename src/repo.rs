@@ -14,6 +14,23 @@ impl SelfRepo {
             .map(|m| m.user_repo.clone())
             .collect()
     }
+
+    pub fn update_submodules(&mut self) -> Result<()> {
+        let submodules: Vec<_> = self
+            .this
+            .submodules()?
+            .into_iter()
+            .map(Submodule::new)
+            .collect::<Result<_>>()?;
+
+        info!(
+            old_submodules = self.submodules.len(),
+            new_submodules = submodules.len()
+        );
+
+        self.submodules = submodules;
+        Ok(())
+    }
 }
 
 pub struct Submodule {
@@ -48,15 +65,12 @@ impl Submodule {
 }
 
 fn self_repo() -> Result<SelfRepo> {
-    let this = Repository::open(".")?;
-
-    let submodules = this
-        .submodules()?
-        .into_iter()
-        .map(Submodule::new)
-        .collect::<Result<_>>()?;
-
-    Ok(SelfRepo { this, submodules })
+    let mut this = SelfRepo {
+        this: Repository::open(".")?,
+        submodules: vec![],
+    };
+    this.update_submodules();
+    Ok(this)
 }
 
 #[test]
