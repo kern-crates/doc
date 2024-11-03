@@ -175,3 +175,6 @@
 [submodule "repos/kern-crates/axvm"]
 	path = repos/kern-crates/axvm
 	url = https://github.com/kern-crates/axvm.git
+[submodule "repos/kern-crates/cap_access"]
+	path = repos/kern-crates/cap_access
+	url = https://github.com/kern-crates/cap_access.git
