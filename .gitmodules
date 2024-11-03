@@ -292,3 +292,6 @@
 [submodule "repos/kern-crates/rboot"]
 	path = repos/kern-crates/rboot
 	url = https://github.com/kern-crates/rboot.git
+[submodule "repos/kern-crates/rcore-tutorial-v3-with-hal-component"]
+	path = repos/kern-crates/rcore-tutorial-v3-with-hal-component
+	url = https://github.com/kern-crates/rcore-tutorial-v3-with-hal-component.git
