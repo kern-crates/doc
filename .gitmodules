@@ -136,3 +136,6 @@
 [submodule "repos/kern-crates/arm_pl031"]
 	path = repos/kern-crates/arm_pl031
 	url = https://github.com/kern-crates/arm_pl031.git
+[submodule "repos/kern-crates/arm_vcpu"]
+	path = repos/kern-crates/arm_vcpu
+	url = https://github.com/kern-crates/arm_vcpu.git
