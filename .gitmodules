@@ -61,3 +61,6 @@
 [submodule "repos/arceos-org/allocator"]
 	path = repos/arceos-org/allocator
 	url = https://github.com/arceos-org/allocator.git
+[submodule "repos/arceos-org/axio"]
+	path = repos/arceos-org/axio
+	url = https://github.com/arceos-org/axio.git
