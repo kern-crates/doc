@@ -8,6 +8,7 @@ pub struct SelfRepo {
 }
 
 pub struct Submodule {
+    // relative dir path
     local: Utf8PathBuf,
     url: String,
     repo: repo::Repo,
@@ -46,7 +47,7 @@ fn parse_submodules() -> Result<()> {
     let v: Vec<_> = repo
         .submodules
         .iter()
-        .map(|m| (&m.repo.user, &m.repo.repo))
+        .map(|m| (&m.repo.user, &m.repo.repo, &m.local))
         .collect();
     dbg!(&v);
 
