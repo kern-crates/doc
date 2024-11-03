@@ -289,3 +289,6 @@
 [submodule "repos/kern-crates/rCoreloongArch"]
 	path = repos/kern-crates/rCoreloongArch
 	url = https://github.com/kern-crates/rCoreloongArch.git
+[submodule "repos/kern-crates/rboot"]
+	path = repos/kern-crates/rboot
+	url = https://github.com/kern-crates/rboot.git
