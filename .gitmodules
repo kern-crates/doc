@@ -307,3 +307,6 @@
 [submodule "repos/kern-crates/safe-virtio-drivers"]
 	path = repos/kern-crates/safe-virtio-drivers
 	url = https://github.com/kern-crates/safe-virtio-drivers.git
+[submodule "repos/kern-crates/scheduler"]
+	path = repos/kern-crates/scheduler
+	url = https://github.com/kern-crates/scheduler.git
