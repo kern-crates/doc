@@ -256,3 +256,6 @@
 [submodule "repos/kern-crates/linked_list_r4l-9"]
 	path = repos/kern-crates/linked_list_r4l-9
 	url = https://github.com/kern-crates/linked_list_r4l-9.git
+[submodule "repos/kern-crates/loongArch64"]
+	path = repos/kern-crates/loongArch64
+	url = https://github.com/kern-crates/loongArch64.git
