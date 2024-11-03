@@ -205,3 +205,6 @@
 [submodule "repos/kern-crates/kspin"]
 	path = repos/kern-crates/kspin
 	url = https://github.com/kern-crates/kspin.git
+[submodule "repos/kern-crates/lazyinit"]
+	path = repos/kern-crates/lazyinit
+	url = https://github.com/kern-crates/lazyinit.git
