@@ -358,3 +358,6 @@
 [submodule "repos/kern-crates/visionfive2-sd"]
 	path = repos/kern-crates/visionfive2-sd
 	url = https://github.com/kern-crates/visionfive2-sd.git
+[submodule "repos/kern-crates/x86_vcpu"]
+	path = repos/kern-crates/x86_vcpu
+	url = https://github.com/kern-crates/x86_vcpu.git
