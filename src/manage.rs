@@ -1,4 +1,8 @@
-use crate::{repo::SelfRepo, submodule_add::submodule_add, DEPLOY, REPOS};
+use crate::{
+    repo::SelfRepo,
+    submodule_add::{submodule_add, submodule_remove},
+    DEPLOY, REPOS,
+};
 use duct::cmd;
 use indexmap::{indexmap, IndexMap, IndexSet};
 use plugin_cargo::{prelude::*, repo::Repo, write_json};
@@ -47,10 +51,18 @@ impl Manage {
             let _span = error_span!("update_submodules_insert", user_repo).entered();
 
             if !self.local.contains_key(user_repo) {
-                info!(user_repo, "append a new user_repo");
+                info!("append a new user_repo");
                 match submodule.repo_metadata() {
                     Ok(repo) => _ = self.local.insert(user_repo.clone(), repo),
-                    Err(err) => error!(?err, "unable to read metadata"),
+                    Err(err) => {
+                        error!(?err, "unable to read metadata");
+
+                        // FIXME: should split user & repo to construct a path
+                        let path = Utf8PathBuf::from(format!("{REPOS}/{user_repo}"));
+                        if let Err(err) = submodule_remove(&path) {
+                            error!(?err, "unsable to remove submodule");
+                        }
+                    }
                 }
             }
         }

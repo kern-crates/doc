@@ -23,8 +23,7 @@ pub fn submodule_add(user_repo: &str, set: &mut Local) -> Result<()> {
     Ok(())
 }
 
-#[allow(dead_code)]
-fn submodule_remove(path: &Utf8Path) -> Result<()> {
+pub fn submodule_remove(path: &Utf8Path) -> Result<()> {
     // git submodule deinit <path>
     // git rm <path>
     // rm -rf .git/modules/<path>
