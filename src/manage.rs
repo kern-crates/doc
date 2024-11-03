@@ -36,12 +36,22 @@ impl Manage {
         for submodule in self.self_repo.submodules() {
             let key = &submodule.user_repo;
             if !self.local.contains_key(key) {
-                info!("append a new user_repo: {key}");
+                info!(key, "append a new user_repo");
                 let repo = submodule.repo_metadata()?;
                 self.local.insert(key.clone(), repo);
+            } else {
+                warn!(key, "already exists a key");
             }
         }
 
         Ok(())
     }
+}
+
+#[test]
+fn update_a_user_repo() -> Result<()> {
+    plugin_cargo::logger::init();
+    let mut manage = Manage::new()?;
+    manage.process("os-checker/os-checker-test-suite")?;
+    Ok(())
 }
