@@ -54,6 +54,7 @@ impl Manage {
         let mut dirs = Vec::with_capacity(128);
         let current_dir = Utf8PathBuf::from_path_buf(std::env::current_dir().unwrap()).unwrap();
         let repos_dir = current_dir.join(REPOS);
+        info!(%current_dir, %repos_dir);
 
         // cargo doc --document-private-items --workspace --no-deps
         for (user_repo, data) in &self.local {
@@ -104,7 +105,7 @@ impl Manage {
 
                 let ws_stripped = ws_dir.strip_prefix(&repos_dir)?; // user/repo/ws
                 dirs.push(DocDir {
-                    src: doc_dir.join("doc"),
+                    src: doc_dir,
                     dst: repos_dir.join(DEPLOY).join(ws_stripped),
                 });
 
@@ -146,9 +147,9 @@ impl Docs {
             let parent = dir.dst.parent().unwrap();
             std::fs::create_dir_all(parent)?;
 
-            let src = &*dir.src;
-            info!("mv {src} {parent}");
-            cmd!("mv", src, parent).run()?;
+            let DocDir { src, dst } = dir.src;
+            info!("mv {src} {dst}");
+            cmd!("mv", src, dst).run()?;
         }
 
         write_json(
