@@ -78,7 +78,7 @@ impl Manage {
 
                 // crate names are package names with - converted to _
                 let pkg_crate_names: IndexMap<_, _> = meta
-                    .packages
+                    .workspace_packages()
                     .iter()
                     .map(|p| (p.name.clone(), p.name.replace("-", "_")))
                     .collect();
@@ -88,8 +88,12 @@ impl Manage {
 
                 for entry in doc_dir.read_dir_utf8()? {
                     let entry = entry?;
-                    doc_path.insert(entry.file_name().to_owned());
+                    if entry.path().is_dir() {
+                        doc_path.insert(entry.file_name().to_owned());
+                    }
                 }
+
+                info!(?pkg_crate_names, %doc_dir, ?doc_path);
 
                 // check missing docs
                 for krate in pkg_crate_names.values() {
