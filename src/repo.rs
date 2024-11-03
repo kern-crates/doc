@@ -8,6 +8,15 @@ pub struct SelfRepo {
 }
 
 impl SelfRepo {
+    pub fn new() -> Result<SelfRepo> {
+        let mut this = SelfRepo {
+            this: Repository::open(".")?,
+            submodules: vec![],
+        };
+        this.update_submodules();
+        Ok(this)
+    }
+
     pub fn vec_of_user_repo(&self) -> Vec<String> {
         self.submodules
             .iter()
@@ -64,18 +73,9 @@ impl Submodule {
     }
 }
 
-fn self_repo() -> Result<SelfRepo> {
-    let mut this = SelfRepo {
-        this: Repository::open(".")?,
-        submodules: vec![],
-    };
-    this.update_submodules();
-    Ok(this)
-}
-
 #[test]
 fn parse_submodules() -> Result<()> {
-    let repo = self_repo()?;
+    let repo = SelfRepo::new()?;
 
     let v: Vec<_> = repo
         .submodules
