@@ -142,3 +142,6 @@
 [submodule "repos/kern-crates/arm_vgic"]
 	path = repos/kern-crates/arm_vgic
 	url = https://github.com/kern-crates/arm_vgic.git
+[submodule "repos/kern-crates/axaddrspace"]
+	path = repos/kern-crates/axaddrspace
+	url = https://github.com/kern-crates/axaddrspace.git
