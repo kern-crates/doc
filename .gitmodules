@@ -94,3 +94,6 @@
 [submodule "repos/Byte-OS/polyhal"]
 	path = repos/Byte-OS/polyhal
 	url = https://github.com/Byte-OS/polyhal.git
+[submodule "repos/Starry-OS/Starry"]
+	path = repos/Starry-OS/Starry
+	url = https://github.com/Starry-OS/Starry.git
