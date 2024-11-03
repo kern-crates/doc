@@ -280,9 +280,6 @@
 [submodule "repos/kern-crates/percpu_macros"]
 	path = repos/kern-crates/percpu_macros
 	url = https://github.com/kern-crates/percpu_macros.git
-[submodule "repos/kern-crates/r4l"]
-	path = repos/kern-crates/r4l
-	url = https://github.com/kern-crates/r4l.git
 [submodule "repos/kern-crates/rCoreloongArch"]
 	path = repos/kern-crates/rCoreloongArch
 	url = https://github.com/kern-crates/rCoreloongArch.git
