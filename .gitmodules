@@ -352,3 +352,6 @@
 [submodule "repos/kern-crates/virt2slint"]
 	path = repos/kern-crates/virt2slint
 	url = https://github.com/kern-crates/virt2slint.git
+[submodule "repos/kern-crates/virtio-input-decoder"]
+	path = repos/kern-crates/virtio-input-decoder
+	url = https://github.com/kern-crates/virtio-input-decoder.git
