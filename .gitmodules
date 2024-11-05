@@ -418,3 +418,6 @@
 [submodule "repos/shilei-massclouds/axdtb"]
 	path = repos/shilei-massclouds/axdtb
 	url = https://github.com/shilei-massclouds/axdtb.git
+[submodule "repos/shilei-massclouds/early_console"]
+	path = repos/shilei-massclouds/early_console
+	url = https://github.com/shilei-massclouds/early_console.git
