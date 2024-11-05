@@ -403,3 +403,6 @@
 [submodule "repos/kern-crates/starry-next"]
 	path = repos/kern-crates/starry-next
 	url = https://github.com/kern-crates/starry-next.git
+[submodule "repos/kern-crates/zcore-linux-object"]
+	path = repos/kern-crates/zcore-linux-object
+	url = https://github.com/kern-crates/zcore-linux-object.git
