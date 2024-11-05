@@ -394,9 +394,6 @@
 [submodule "repos/kern-crates/linked_list_r4l-18"]
 	path = repos/kern-crates/linked_list_r4l-18
 	url = https://github.com/kern-crates/linked_list_r4l-18.git
-[submodule "repos/kern-crates/rcore-tutorial-v3-with-hal-component"]
-	path = repos/kern-crates/rcore-tutorial-v3-with-hal-component
-	url = https://github.com/kern-crates/rcore-tutorial-v3-with-hal-component.git
 [submodule "repos/kern-crates/starry-next"]
 	path = repos/kern-crates/starry-next
 	url = https://github.com/kern-crates/starry-next.git
