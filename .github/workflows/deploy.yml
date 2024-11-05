@@ -8,7 +8,7 @@ env:
   RUST_LOG: info
   CARGO_TERM_COLOR: always
   TAG_REPOS_DEFAULT: cache-v8.redb
-  DOCS_URL: https://os-checker.github.io/docs
+  DOCS_URL: ${{ vars.DOCS_URL }}
 
 jobs:
   build:
@@ -22,10 +22,8 @@ jobs:
 
       - name: Set up author & committer
         run: |
-          git config --global user.name "周积萍 [bot]"
+          git config --global user.name "zjp-CN [bot]"
           git config --global user.email "zjp-CN[bot]@users.noreply.github.com"
-          git config --global committer.name "周积萍 [bot]"
-          git config --global committer.email "zjp-CN[bot]@users.noreply.github.com"
           git lfs install --skip-smudge # 如果 lfs 下载不了大文件，跳过下载
 
       - name: Update submodules
@@ -34,12 +32,13 @@ jobs:
           jq 'del(."qclic/e1000e-frame") | del(."AsyncModules/embassy-priority") | del(."kern-crates/rust-sel4") | to_entries | map(.key) + ["os-checker/os-checker"]' repos-default.json > list.json
           cargo r -- #list-test.json
 
-      - name: Push changes to remote repo
-        run: |
-          # in case it's outdated in the runner 
-          git pull --rebase
-          # push to remote repo if any
-          git push && true
+      # - name: Push changes to remote repo
+      #   if:
+      #   run: |
+      #     # in case it's outdated in the runner 
+      #     git pull --rebase
+      #     # push to remote repo if any
+      #     git push && true
 
       - name: Upload static files as artifact
         id: deployment
