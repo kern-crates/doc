@@ -22,9 +22,9 @@ jobs:
 
       - name: Set up author & committer
         run: |
-          git config --global user.name "周积萍"
-          git config --global user.email "jiping_zhou@foxmail.com"
-          git config --global committer.name "zjp-CN[bot]"
+          git config --global user.name "周积萍 [bot]"
+          git config --global user.email "zjp-CN[bot]@users.noreply.github.com"
+          git config --global committer.name "周积萍 [bot]"
           git config --global committer.email "zjp-CN[bot]@users.noreply.github.com"
           git lfs install --skip-smudge # 如果 lfs 下载不了大文件，跳过下载
 
