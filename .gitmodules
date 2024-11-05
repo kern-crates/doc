@@ -406,3 +406,6 @@
 [submodule "repos/kern-crates/zcore-linux-object"]
 	path = repos/kern-crates/zcore-linux-object
 	url = https://github.com/kern-crates/zcore-linux-object.git
+[submodule "repos/kern-crates/zcore-linux-syscall"]
+	path = repos/kern-crates/zcore-linux-syscall
+	url = https://github.com/kern-crates/zcore-linux-syscall.git
