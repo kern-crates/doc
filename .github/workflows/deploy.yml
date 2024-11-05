@@ -22,7 +22,7 @@ jobs:
 
       - name: Set up author & committer
         run: |
-          git config --global user.name "zjp-CN"
+          git config --global user.name "周积萍"
           git config --global user.email "jiping_zhou@foxmail.com"
           git config --global committer.name "zjp-CN[bot]"
           git config --global committer.email "zjp-CN[bot]@users.noreply.github.com"
