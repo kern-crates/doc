@@ -412,3 +412,6 @@
 [submodule "repos/kern-crates/zcore-loader"]
 	path = repos/kern-crates/zcore-loader
 	url = https://github.com/kern-crates/zcore-loader.git
+[submodule "repos/shilei-massclouds/arch_boot"]
+	path = repos/shilei-massclouds/arch_boot
+	url = https://github.com/shilei-massclouds/arch_boot.git
