@@ -49,9 +49,6 @@
 [submodule "repos/arceos-org/timer_list"]
 	path = repos/arceos-org/timer_list
 	url = https://github.com/arceos-org/timer_list.git
-[submodule "repos/arceos-org/axerrno"]
-	path = repos/arceos-org/axerrno
-	url = https://github.com/arceos-org/axerrno.git
 [submodule "repos/arceos-org/int_ratio"]
 	path = repos/arceos-org/int_ratio
 	url = https://github.com/arceos-org/int_ratio.git
