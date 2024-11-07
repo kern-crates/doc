@@ -7,9 +7,6 @@
 [submodule "repos/os-checker/plugin-cargo"]
 	path = repos/os-checker/plugin-cargo
 	url = https://github.com/os-checker/plugin-cargo.git
-[submodule "repos/kern-crates/dw_apb_uart"]
-	path = repos/kern-crates/dw_apb_uart
-	url = https://github.com/kern-crates/dw_apb_uart.git
 [submodule "repos/kern-crates/elf_parser_rs"]
 	path = repos/kern-crates/elf_parser_rs
 	url = https://github.com/kern-crates/elf_parser_rs.git
