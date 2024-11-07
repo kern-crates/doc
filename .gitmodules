@@ -7,9 +7,6 @@
 [submodule "repos/os-checker/plugin-cargo"]
 	path = repos/os-checker/plugin-cargo
 	url = https://github.com/os-checker/plugin-cargo.git
-[submodule "repos/kern-crates/sel4_cspace"]
-	path = repos/kern-crates/sel4_cspace
-	url = https://github.com/kern-crates/sel4_cspace.git
 [submodule "repos/kern-crates/sel4_ipc"]
 	path = repos/kern-crates/sel4_ipc
 	url = https://github.com/kern-crates/sel4_ipc.git
