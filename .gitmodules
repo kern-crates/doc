@@ -19,9 +19,6 @@
 [submodule "repos/arceos-org/linked_list"]
 	path = repos/arceos-org/linked_list
 	url = https://github.com/arceos-org/linked_list.git
-[submodule "repos/arceos-org/arceos-apps"]
-	path = repos/arceos-org/arceos-apps
-	url = https://github.com/arceos-org/arceos-apps.git
 [submodule "repos/arceos-org/scheduler"]
 	path = repos/arceos-org/scheduler
 	url = https://github.com/arceos-org/scheduler.git
