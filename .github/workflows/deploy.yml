@@ -26,11 +26,11 @@ jobs:
           git config --global user.email "zjp-CN[bot]@users.noreply.github.com"
           git lfs install --skip-smudge # 如果 lfs 下载不了大文件，跳过下载
 
-      - name: Update submodules
+      - name: Generate rustdoc artifacts
         run: |
           wget https://github.com/os-checker/database/releases/download/${{ env.TAG_REPOS_DEFAULT }}/repos-default.json
           jq 'del(."qclic/e1000e-frame") | del(."AsyncModules/embassy-priority") | del(."kern-crates/rust-sel4") | to_entries | map(.key) + ["os-checker/os-checker"]' repos-default.json > list.json
-          cargo r -- list-test.json
+          cargo r -- # list-test.json
 
       - name: Upload static files as artifact
         id: deployment
