@@ -15,10 +15,16 @@ fn main() -> Result<()> {
 
     let list: Vec<String> = serde_json::from_slice(&std::fs::read(&list_json)?)?;
 
+    let mut docs = generate_rustdoc::Docs::new();
+
     for user_repo in &list {
-        let manage = generate_rustdoc::Manage::new(user_repo)?;
-        manage.cargo_doc()?.finish()?;
+        if let Ok(manage) = generate_rustdoc::Manage::new(user_repo).inspect_err(|err| error!(?err))
+        {
+            _ = manage.cargo_doc(&mut docs).inspect_err(|err| error!(?err));
+        }
     }
+
+    _ = docs.finish().inspect_err(|err| error!(?err));
 
     Ok(())
 }

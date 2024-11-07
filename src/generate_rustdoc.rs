@@ -13,13 +13,11 @@ impl Manage {
         Ok(Manage { repo })
     }
 
-    pub fn cargo_doc(&self) -> Result<Docs> {
+    pub fn cargo_doc(&self, docs_: &mut Docs) -> Result<()> {
         let url_prefix = std::env::var("DOCS_URL")
             .map(|s| s.trim_end_matches('/').to_owned())
             .unwrap_or_default();
 
-        let mut docs = UserRepoPkgCrate::with_capacity(128);
-        let mut dirs = Vec::with_capacity(128);
         let repos_dir = Utf8PathBuf::from_iter(["/tmp", "os-checker-plugin-cargo"]);
 
         // cargo doc --document-private-items --workspace --no-deps
@@ -84,27 +82,25 @@ impl Manage {
             }
             urls.sort_unstable_keys();
 
-            dirs.push(DocDir {
+            docs_.dirs.push(DocDir {
                 src: doc_dir,
                 dst: Utf8PathBuf::from(DEPLOY).join(ws_stripped),
             });
 
             let (user, repo) = (data.user.as_str(), data.repo.as_str());
-            match docs.get_mut(user) {
+            match docs_.docs.get_mut(user) {
                 Some(map_repo) => match map_repo.get_mut(repo) {
                     Some(map_pkgs) => map_pkgs.extend(urls),
                     None => _ = map_repo.insert(repo.to_owned(), urls),
                 },
                 None => {
                     let map = indexmap! { repo.to_owned() =>urls };
-                    docs.insert(user.to_owned(), map);
+                    docs_.docs.insert(user.to_owned(), map);
                 }
             }
         }
 
-        docs.values_mut().for_each(|m| m.sort_unstable_keys());
-        docs.sort_unstable_keys();
-        Ok(Docs { docs, dirs })
+        Ok(())
     }
 }
 
@@ -119,7 +115,16 @@ pub struct Docs {
 }
 
 impl Docs {
-    pub fn finish(&self) -> Result<()> {
+    pub fn new() -> Self {
+        let docs = UserRepoPkgCrate::with_capacity(128);
+        let dirs = Vec::with_capacity(128);
+        Docs { docs, dirs }
+    }
+
+    pub fn finish(&mut self) -> Result<()> {
+        self.docs.values_mut().for_each(|m| m.sort_unstable_keys());
+        self.docs.sort_unstable_keys();
+
         info!(
             "doc = {}\ndirs = {:#?}",
             serde_json::to_string_pretty(&self.docs)?,
