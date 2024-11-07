@@ -32,19 +32,11 @@ jobs:
           jq 'del(."qclic/e1000e-frame") | del(."AsyncModules/embassy-priority") | del(."kern-crates/rust-sel4") | to_entries | map(.key) + ["os-checker/os-checker"]' repos-default.json > list.json
           cargo r -- #list-test.json
 
-      # - name: Push changes to remote repo
-      #   if:
-      #   run: |
-      #     # in case it's outdated in the runner 
-      #     git pull --rebase
-      #     # push to remote repo if any
-      #     git push && true
-
       - name: Upload static files as artifact
         id: deployment
         uses: actions/upload-pages-artifact@v3
         with:
-          path: repos/deploy/
+          path: deploy/
 
   # Deployment job
   deploy:
