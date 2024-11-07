@@ -55,9 +55,6 @@
 [submodule "repos/arceos-org/axfs_crates"]
 	path = repos/arceos-org/axfs_crates
 	url = https://github.com/arceos-org/axfs_crates.git
-[submodule "repos/arceos-org/allocator"]
-	path = repos/arceos-org/allocator
-	url = https://github.com/arceos-org/allocator.git
 [submodule "repos/arceos-org/axio"]
 	path = repos/arceos-org/axio
 	url = https://github.com/arceos-org/axio.git
