@@ -7,9 +7,6 @@
 [submodule "repos/os-checker/plugin-cargo"]
 	path = repos/os-checker/plugin-cargo
 	url = https://github.com/os-checker/plugin-cargo.git
-[submodule "repos/kern-crates/rboot"]
-	path = repos/kern-crates/rboot
-	url = https://github.com/kern-crates/rboot.git
 [submodule "repos/kern-crates/riscv_vcpu"]
 	path = repos/kern-crates/riscv_vcpu
 	url = https://github.com/kern-crates/riscv_vcpu.git
