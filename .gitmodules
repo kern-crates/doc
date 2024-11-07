@@ -7,9 +7,6 @@
 [submodule "repos/os-checker/plugin-cargo"]
 	path = repos/os-checker/plugin-cargo
 	url = https://github.com/os-checker/plugin-cargo.git
-[submodule "repos/kern-crates/virtio-input-decoder"]
-	path = repos/kern-crates/virtio-input-decoder
-	url = https://github.com/kern-crates/virtio-input-decoder.git
 [submodule "repos/kern-crates/visionfive2-sd"]
 	path = repos/kern-crates/visionfive2-sd
 	url = https://github.com/kern-crates/visionfive2-sd.git
