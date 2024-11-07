@@ -7,9 +7,6 @@
 [submodule "repos/os-checker/plugin-cargo"]
 	path = repos/os-checker/plugin-cargo
 	url = https://github.com/os-checker/plugin-cargo.git
-[submodule "repos/kern-crates/pager"]
-	path = repos/kern-crates/pager
-	url = https://github.com/kern-crates/pager.git
 [submodule "repos/kern-crates/pconst"]
 	path = repos/kern-crates/pconst
 	url = https://github.com/kern-crates/pconst.git
