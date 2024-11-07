@@ -7,9 +7,6 @@
 [submodule "repos/os-checker/plugin-cargo"]
 	path = repos/os-checker/plugin-cargo
 	url = https://github.com/os-checker/plugin-cargo.git
-[submodule "repos/kern-crates/linked_list_r4l-3"]
-	path = repos/kern-crates/linked_list_r4l-3
-	url = https://github.com/kern-crates/linked_list_r4l-3.git
 [submodule "repos/kern-crates/linked_list_r4l-4"]
 	path = repos/kern-crates/linked_list_r4l-4
 	url = https://github.com/kern-crates/linked_list_r4l-4.git
