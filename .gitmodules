@@ -88,9 +88,6 @@
 [submodule "repos/arceos-org/kernel_guard"]
 	path = repos/arceos-org/kernel_guard
 	url = https://github.com/arceos-org/kernel_guard.git
-[submodule "repos/ZR233/arm-gic-driver"]
-	path = repos/ZR233/arm-gic-driver
-	url = https://github.com/ZR233/arm-gic-driver.git
 [submodule "repos/ZR233/arm-pl011-rs"]
 	path = repos/ZR233/arm-pl011-rs
 	url = https://github.com/ZR233/arm-pl011-rs.git
