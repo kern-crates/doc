@@ -7,9 +7,6 @@
 [submodule "repos/os-checker/plugin-cargo"]
 	path = repos/os-checker/plugin-cargo
 	url = https://github.com/os-checker/plugin-cargo.git
-[submodule "repos/elliott10/e1000-driver"]
-	path = repos/elliott10/e1000-driver
-	url = https://github.com/elliott10/e1000-driver.git
 [submodule "repos/elliott10/lwext4_rust"]
 	path = repos/elliott10/lwext4_rust
 	url = https://github.com/elliott10/lwext4_rust.git
