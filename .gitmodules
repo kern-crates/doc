@@ -10,9 +10,6 @@
 [submodule "repos/arceos-org/kspin"]
 	path = repos/arceos-org/kspin
 	url = https://github.com/arceos-org/kspin.git
-[submodule "repos/arceos-org/axmm_crates"]
-	path = repos/arceos-org/axmm_crates
-	url = https://github.com/arceos-org/axmm_crates.git
 [submodule "repos/arceos-org/percpu"]
 	path = repos/arceos-org/percpu
 	url = https://github.com/arceos-org/percpu.git
