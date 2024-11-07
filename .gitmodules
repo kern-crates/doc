@@ -7,9 +7,6 @@
 [submodule "repos/os-checker/plugin-cargo"]
 	path = repos/os-checker/plugin-cargo
 	url = https://github.com/os-checker/plugin-cargo.git
-[submodule "repos/kern-crates/timer_list"]
-	path = repos/kern-crates/timer_list
-	url = https://github.com/kern-crates/timer_list.git
 [submodule "repos/kern-crates/tracer"]
 	path = repos/kern-crates/tracer
 	url = https://github.com/kern-crates/tracer.git
