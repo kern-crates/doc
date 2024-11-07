@@ -7,9 +7,6 @@
 [submodule "repos/os-checker/plugin-cargo"]
 	path = repos/os-checker/plugin-cargo
 	url = https://github.com/os-checker/plugin-cargo.git
-[submodule "repos/kern-crates/axprocess"]
-	path = repos/kern-crates/axprocess
-	url = https://github.com/kern-crates/axprocess.git
 [submodule "repos/kern-crates/axvcpu"]
 	path = repos/kern-crates/axvcpu
 	url = https://github.com/kern-crates/axvcpu.git
