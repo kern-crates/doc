@@ -5,12 +5,6 @@ extern crate tracing;
 
 mod generate_rustdoc;
 
-mod repo;
-mod submodule_add;
-
-mod manage;
-
-const REPOS: &str = "repos";
 const DEPLOY: &str = "deploy";
 
 fn main() -> Result<()> {
@@ -22,7 +16,7 @@ fn main() -> Result<()> {
     let list: Vec<String> = serde_json::from_slice(&std::fs::read(&list_json)?)?;
 
     for user_repo in &list {
-        let mut manage = generate_rustdoc::Manage::new(user_repo)?;
+        let manage = generate_rustdoc::Manage::new(user_repo)?;
         manage.cargo_doc()?.finish()?;
     }
 
