@@ -1,7 +1,18 @@
 use crate::DEPLOY;
 use duct::cmd;
 use indexmap::{indexmap, IndexSet};
-use plugin_cargo::{prelude::*, repo::Repo, write_json};
+use plugin_cargo::{
+    prelude::*,
+    repo::{git_clone_dir, Repo},
+    write_json,
+};
+use std::sync::LazyLock;
+
+static DOCS_URL: LazyLock<String> = LazyLock::new(|| {
+    std::env::var("DOCS_URL")
+        .map(|s| s.trim_end_matches('/').to_owned())
+        .unwrap_or_default()
+});
 
 pub struct Manage {
     repo: Repo,
@@ -13,12 +24,8 @@ impl Manage {
         Ok(Manage { repo })
     }
 
-    pub fn cargo_doc(&self, docs_: &mut Docs) -> Result<()> {
-        let url_prefix = std::env::var("DOCS_URL")
-            .map(|s| s.trim_end_matches('/').to_owned())
-            .unwrap_or_default();
-
-        let repos_dir = Utf8PathBuf::from_iter(["/tmp", "os-checker-plugin-cargo"]);
+    pub fn cargo_doc(&self, docs: &mut Docs) -> Result<()> {
+        let repos_dir = git_clone_dir();
 
         // cargo doc --document-private-items --workspace --no-deps
         let data = &self.repo;
@@ -76,26 +83,27 @@ impl Manage {
                     error!("crate `{krate}` does not generate rustdoc");
                     None
                 } else {
+                    let url_prefix = &*DOCS_URL;
                     Some(format!("{url_prefix}/{ws_stripped}/{krate}"))
                 };
                 urls.insert(pkg, url);
             }
             urls.sort_unstable_keys();
 
-            docs_.dirs.push(DocDir {
+            docs.dirs.push(DocDir {
                 src: doc_dir,
                 dst: Utf8PathBuf::from(DEPLOY).join(ws_stripped),
             });
 
             let (user, repo) = (data.user.as_str(), data.repo.as_str());
-            match docs_.docs.get_mut(user) {
+            match docs.docs.get_mut(user) {
                 Some(map_repo) => match map_repo.get_mut(repo) {
                     Some(map_pkgs) => map_pkgs.extend(urls),
                     None => _ = map_repo.insert(repo.to_owned(), urls),
                 },
                 None => {
                     let map = indexmap! { repo.to_owned() =>urls };
-                    docs_.docs.insert(user.to_owned(), map);
+                    docs.docs.insert(user.to_owned(), map);
                 }
             }
         }
