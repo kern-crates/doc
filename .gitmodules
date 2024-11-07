@@ -157,9 +157,6 @@
 [submodule "repos/yuoo655/ext4libtest"]
 	path = repos/yuoo655/ext4libtest
 	url = https://github.com/yuoo655/ext4libtest.git
-[submodule "repos/kern-crates/linked_list_r4l-16"]
-	path = repos/kern-crates/linked_list_r4l-16
-	url = https://github.com/kern-crates/linked_list_r4l-16.git
 [submodule "repos/kern-crates/linked_list_r4l-17"]
 	path = repos/kern-crates/linked_list_r4l-17
 	url = https://github.com/kern-crates/linked_list_r4l-17.git
