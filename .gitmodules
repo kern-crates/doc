@@ -7,9 +7,6 @@
 [submodule "repos/os-checker/plugin-cargo"]
 	path = repos/os-checker/plugin-cargo
 	url = https://github.com/os-checker/plugin-cargo.git
-[submodule "repos/kern-crates/safe-virtio-drivers"]
-	path = repos/kern-crates/safe-virtio-drivers
-	url = https://github.com/kern-crates/safe-virtio-drivers.git
 [submodule "repos/kern-crates/scheduler"]
 	path = repos/kern-crates/scheduler
 	url = https://github.com/kern-crates/scheduler.git
