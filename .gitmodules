@@ -373,9 +373,6 @@
 [submodule "repos/yuoo655/ext4libtest"]
 	path = repos/yuoo655/ext4libtest
 	url = https://github.com/yuoo655/ext4libtest.git
-[submodule "repos/Starry-OS/Starry"]
-	path = repos/Starry-OS/Starry
-	url = https://github.com/Starry-OS/Starry.git
 [submodule "repos/kern-crates/linked_list_r4l-15"]
 	path = repos/kern-crates/linked_list_r4l-15
 	url = https://github.com/kern-crates/linked_list_r4l-15.git
