@@ -7,9 +7,6 @@
 [submodule "repos/os-checker/plugin-cargo"]
 	path = repos/os-checker/plugin-cargo
 	url = https://github.com/os-checker/plugin-cargo.git
-[submodule "repos/arceos-org/timer_list"]
-	path = repos/arceos-org/timer_list
-	url = https://github.com/arceos-org/timer_list.git
 [submodule "repos/elliott10/e1000-driver"]
 	path = repos/elliott10/e1000-driver
 	url = https://github.com/elliott10/e1000-driver.git
