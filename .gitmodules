@@ -31,9 +31,6 @@
 [submodule "repos/arceos-org/timer_list"]
 	path = repos/arceos-org/timer_list
 	url = https://github.com/arceos-org/timer_list.git
-[submodule "repos/arceos-org/kernel_guard"]
-	path = repos/arceos-org/kernel_guard
-	url = https://github.com/arceos-org/kernel_guard.git
 [submodule "repos/elliott10/e1000-driver"]
 	path = repos/elliott10/e1000-driver
 	url = https://github.com/elliott10/e1000-driver.git
