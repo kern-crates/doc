@@ -13,9 +13,6 @@
 [submodule "repos/arceos-org/scheduler"]
 	path = repos/arceos-org/scheduler
 	url = https://github.com/arceos-org/scheduler.git
-[submodule "repos/arceos-org/page_table_multiarch"]
-	path = repos/arceos-org/page_table_multiarch
-	url = https://github.com/arceos-org/page_table_multiarch.git
 [submodule "repos/arceos-org/timer_list"]
 	path = repos/arceos-org/timer_list
 	url = https://github.com/arceos-org/timer_list.git
