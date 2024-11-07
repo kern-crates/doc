@@ -37,9 +37,6 @@
 [submodule "repos/arceos-org/lazyinit"]
 	path = repos/arceos-org/lazyinit
 	url = https://github.com/arceos-org/lazyinit.git
-[submodule "repos/arceos-org/axio"]
-	path = repos/arceos-org/axio
-	url = https://github.com/arceos-org/axio.git
 [submodule "repos/arceos-org/cap_access"]
 	path = repos/arceos-org/cap_access
 	url = https://github.com/arceos-org/cap_access.git
