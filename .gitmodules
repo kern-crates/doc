@@ -7,9 +7,6 @@
 [submodule "repos/os-checker/plugin-cargo"]
 	path = repos/os-checker/plugin-cargo
 	url = https://github.com/os-checker/plugin-cargo.git
-[submodule "repos/kern-crates/zcore-zircon-object"]
-	path = repos/kern-crates/zcore-zircon-object
-	url = https://github.com/kern-crates/zcore-zircon-object.git
 [submodule "repos/kern-crates/zcore-zircon-syscall"]
 	path = repos/kern-crates/zcore-zircon-syscall
 	url = https://github.com/kern-crates/zcore-zircon-syscall.git
