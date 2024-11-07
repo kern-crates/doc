@@ -7,9 +7,6 @@
 [submodule "repos/os-checker/plugin-cargo"]
 	path = repos/os-checker/plugin-cargo
 	url = https://github.com/os-checker/plugin-cargo.git
-[submodule "repos/arceos-org/kspin"]
-	path = repos/arceos-org/kspin
-	url = https://github.com/arceos-org/kspin.git
 [submodule "repos/arceos-org/percpu"]
 	path = repos/arceos-org/percpu
 	url = https://github.com/arceos-org/percpu.git
