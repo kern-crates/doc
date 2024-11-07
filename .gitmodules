@@ -34,9 +34,6 @@
 [submodule "repos/arceos-org/int_ratio"]
 	path = repos/arceos-org/int_ratio
 	url = https://github.com/arceos-org/int_ratio.git
-[submodule "repos/arceos-org/handler_table"]
-	path = repos/arceos-org/handler_table
-	url = https://github.com/arceos-org/handler_table.git
 [submodule "repos/arceos-org/kernel_guard"]
 	path = repos/arceos-org/kernel_guard
 	url = https://github.com/arceos-org/kernel_guard.git
