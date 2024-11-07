@@ -22,9 +22,6 @@
 [submodule "repos/arceos-org/memory_set"]
 	path = repos/arceos-org/memory_set
 	url = https://github.com/arceos-org/memory_set.git
-[submodule "repos/arceos-org/lazyinit"]
-	path = repos/arceos-org/lazyinit
-	url = https://github.com/arceos-org/lazyinit.git
 [submodule "repos/arceos-org/timer_list"]
 	path = repos/arceos-org/timer_list
 	url = https://github.com/arceos-org/timer_list.git
