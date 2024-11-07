@@ -37,9 +37,6 @@
 [submodule "repos/arceos-org/lazyinit"]
 	path = repos/arceos-org/lazyinit
 	url = https://github.com/arceos-org/lazyinit.git
-[submodule "repos/arceos-org/arm_pl031"]
-	path = repos/arceos-org/arm_pl031
-	url = https://github.com/arceos-org/arm_pl031.git
 [submodule "repos/arceos-org/axfs_crates"]
 	path = repos/arceos-org/axfs_crates
 	url = https://github.com/arceos-org/axfs_crates.git
