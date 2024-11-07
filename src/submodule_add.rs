@@ -55,6 +55,13 @@ fn add() -> Result<()> {
 #[test]
 #[ignore = "should be confirmed to call this"]
 fn remove() -> Result<()> {
-    submodule_remove("repos/os-checker/plugin-cargo".into())?;
+    // submodule_remove("repos/os-checker/plugin-cargo".into())?;
+
+    // remove all submodules
+    // let repo = crate::repo::SelfRepo::new()?;
+    // for sub in repo.submodules() {
+    //     submodule_remove(&sub.local)?;
+    // }
+
     Ok(())
 }
