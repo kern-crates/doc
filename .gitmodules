@@ -1,6 +1,3 @@
-[submodule "repos/yuoo655/ext4_rs"]
-	path = repos/yuoo655/ext4_rs
-	url = https://github.com/yuoo655/ext4_rs.git
 [submodule "repos/yuoo655/ext4libtest"]
 	path = repos/yuoo655/ext4libtest
 	url = https://github.com/yuoo655/ext4libtest.git
