@@ -31,15 +31,16 @@ jobs:
 
       - name: Install os-checker
         run: |
+          wget https://github.com/os-checker/database/releases/download/${{ env.TAG_REPOS_DEFAULT }}/repos-default.json
+          wget https://raw.githubusercontent.com/os-checker/os-checker/refs/heads/main/assets/repos-ui.json
+
+          # jq 'del(."qclic/e1000e-frame") | to_entries | map(.key) + ["os-checker/os-checker"]' repos-default.json > list.json
           wget https://github.com/os-checker/database/releases/download/precompiled-checkers/os-checker -O ~/.cargo/bin/os-checker
           chmod +x ~/.cargo/bin/os-checker
           os-checker config --list-repos
 
       - name: Generate rustdoc artifacts
         run: |
-          wget https://github.com/os-checker/database/releases/download/${{ env.TAG_REPOS_DEFAULT }}/repos-default.json
-          wget https://raw.githubusercontent.com/os-checker/os-checker/refs/heads/main/assets/repos-ui.json
-          # jq 'del(."qclic/e1000e-frame") | to_entries | map(.key) + ["os-checker/os-checker"]' repos-default.json > list.json
           cargo r # -- list-test.json
 
       - name: Upload static files as artifact
