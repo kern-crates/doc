@@ -1,4 +1,4 @@
-use plugin_cargo::{logger, prelude::*};
+use plugin_cargo::{logger, prelude::*, repos};
 
 #[macro_use]
 extern crate tracing;
@@ -10,10 +10,7 @@ const DEPLOY: &str = "deploy";
 fn main() -> Result<()> {
     logger::init();
 
-    let arg = std::env::args().nth(1);
-    let list_json = Utf8PathBuf::from(arg.as_deref().unwrap_or("list.json"));
-
-    let list: Vec<String> = serde_json::from_slice(&std::fs::read(&list_json)?)?;
+    let list = repos()?;
 
     let mut docs = generate_rustdoc::Docs::new();
 
