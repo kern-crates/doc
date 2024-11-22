@@ -11,7 +11,7 @@ env:
   CARGO_TERM_COLOR: always
   TAG_REPOS_DEFAULT: cache-v8.redb
   DOCS_URL: ${{ vars.DOCS_URL }}
-  OS_CHECKER_CONFIGS: repos-default.json repos-ui.json
+  OS_CHECKER_CONFIGS: repos-default.json repos-ui.json repos.json
 
 jobs:
   build:
@@ -33,6 +33,7 @@ jobs:
         run: |
           wget https://github.com/os-checker/database/releases/download/${{ env.TAG_REPOS_DEFAULT }}/repos-default.json
           wget https://raw.githubusercontent.com/os-checker/os-checker/refs/heads/main/assets/repos-ui.json
+          jq "map({(.):{}}) | add" list-test.json > repos.json
 
           # jq 'del(."qclic/e1000e-frame") | to_entries | map(.key) + ["os-checker/os-checker"]' repos-default.json > list.json
           wget https://github.com/os-checker/database/releases/download/precompiled-checkers/os-checker -O ~/.cargo/bin/os-checker
