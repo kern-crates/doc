@@ -435,7 +435,8 @@ checksum = "1261fe7e33c73b354eab43b1273a57c8f967d0391e80353e51f764ac02cf6775"
 [[package]]
 name = "os-checker-plugin-cargo"
 version = "0.1.0"
-source = "git+https://github.com/os-checker/plugin-cargo.git#337c47216ecade5c197beab77c6a87e4be538c25"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "6ff03285485c2fa9dc5583879bc0d5aeb10bd4b231849b39f6aa4dfbb17b3331"
 dependencies = [
  "camino",
  "cargo_metadata 0.18.1",
