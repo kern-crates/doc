@@ -41,7 +41,7 @@ jobs:
 
       - name: Generate rustdoc artifacts
         run: |
-          cargo r # -- list-test.json
+          cargo r -- list-test.json
 
       - name: Upload static files as artifact
         id: deployment
