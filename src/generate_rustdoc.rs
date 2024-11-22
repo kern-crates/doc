@@ -1,11 +1,7 @@
 use crate::DEPLOY;
 use duct::cmd;
 use indexmap::{indexmap, IndexSet};
-use plugin_cargo::{
-    prelude::*,
-    repo::{git_clone_dir, Repo},
-    write_json,
-};
+use plugin_cargo::{prelude::*, repo::Repo, write_json};
 use std::sync::LazyLock;
 
 static DOCS_URL: LazyLock<String> = LazyLock::new(|| {
@@ -20,12 +16,12 @@ pub struct Manage {
 
 impl Manage {
     pub fn new(user_repo: &str) -> Result<Self> {
-        let repo = Repo::new(user_repo, plugin_cargo::repo::RepoSource::Github)?;
+        let repo = Repo::new(user_repo)?;
         Ok(Manage { repo })
     }
 
     pub fn cargo_doc(&self, docs: &mut Docs) -> Result<()> {
-        let repos_dir = git_clone_dir();
+        let repo_dir = &*self.repo.dir;
 
         // cargo doc --document-private-items --workspace --no-deps
         let data = &self.repo;
@@ -72,7 +68,7 @@ impl Manage {
                 }
             }
 
-            let ws_stripped = ws_dir.strip_prefix(&repos_dir)?; // user/repo/ws
+            let ws_stripped = ws_dir.strip_prefix(repo_dir)?; // user/repo/ws
             info!(?pkg_crate_names, %ws_stripped, %doc_dir, ?doc_path);
 
             let mut urls = IndexMap::<String, Option<String>>::with_capacity(pkg_crate_names.len());
