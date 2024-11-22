@@ -22,5 +22,5 @@ tracing = "0.1"
 tracing-subscriber = { version = "0.3", features = ["env-filter"] }
 tracing-error = "0.2"
 
-plugin_cargo = { git = "https://github.com/os-checker/plugin-cargo.git", package = "os-checker-plugin-cargo" }
+plugin_cargo = { version = "0.1.0", package = "os-checker-plugin-cargo" }
 
