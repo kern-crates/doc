@@ -141,24 +141,6 @@ dependencies = [
 ]
 
 [[package]]
-name = "docs"
-version = "0.1.0"
-dependencies = [
- "camino",
- "cargo_metadata",
- "color-eyre",
- "duct",
- "eyre",
- "indexmap",
- "os-checker-plugin-cargo",
- "serde",
- "serde_json",
- "tracing",
- "tracing-error",
- "tracing-subscriber",
-]
-
-[[package]]
 name = "duct"
 version = "0.13.7"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -332,6 +314,24 @@ dependencies = [
  "tracing-error",
  "tracing-subscriber",
  "walkdir",
+]
+
+[[package]]
+name = "os-checker-plugin-docs"
+version = "0.1.0"
+dependencies = [
+ "camino",
+ "cargo_metadata",
+ "color-eyre",
+ "duct",
+ "eyre",
+ "indexmap",
+ "os-checker-plugin-cargo",
+ "serde",
+ "serde_json",
+ "tracing",
+ "tracing-error",
+ "tracing-subscriber",
 ]
 
 [[package]]

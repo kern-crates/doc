@@ -1,5 +1,5 @@
 [package]
-name = "docs"
+name = "os-checker-plugin-docs"
 version = "0.1.0"
 edition = "2021"
 
