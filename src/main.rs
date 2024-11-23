@@ -1,4 +1,4 @@
-use plugin_cargo::{logger, prelude::*, repos};
+use plugin::{logger, prelude::*, repos};
 
 #[macro_use]
 extern crate tracing;

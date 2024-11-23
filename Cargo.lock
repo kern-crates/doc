@@ -433,10 +433,10 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "1261fe7e33c73b354eab43b1273a57c8f967d0391e80353e51f764ac02cf6775"
 
 [[package]]
-name = "os-checker-plugin-cargo"
-version = "0.1.0"
+name = "os-checker-plugin"
+version = "0.1.2"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "6ff03285485c2fa9dc5583879bc0d5aeb10bd4b231849b39f6aa4dfbb17b3331"
+checksum = "4cf3e4a747d1ab4a28fdb25b71a87b78c7a404ba00208f6c5b743805c776ee03"
 dependencies = [
  "camino",
  "cargo_metadata 0.18.1",
@@ -446,13 +446,25 @@ dependencies = [
  "eyre",
  "indexmap",
  "jiff",
- "nextest-metadata",
- "os-checker-types",
  "serde",
  "serde_json",
  "tracing",
  "tracing-error",
  "tracing-subscriber",
+]
+
+[[package]]
+name = "os-checker-plugin-cargo"
+version = "0.1.1"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "1cbb8e6eff2c8ec1b2cd36c27c1c2d0e65fd2b147c355a750d9f35c87c1e1436"
+dependencies = [
+ "eyre",
+ "nextest-metadata",
+ "os-checker-plugin",
+ "os-checker-types",
+ "serde",
+ "tracing",
  "walkdir",
 ]
 
@@ -466,6 +478,7 @@ dependencies = [
  "duct",
  "eyre",
  "indexmap",
+ "os-checker-plugin",
  "os-checker-plugin-cargo",
  "serde",
  "serde_json",

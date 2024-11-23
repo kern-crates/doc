@@ -1,11 +1,8 @@
 use crate::DEPLOY;
 use duct::cmd;
 use indexmap::{indexmap, IndexSet};
-use plugin_cargo::{
-    prelude::*,
-    repo::{local_base_dir, Repo},
-    write_json,
-};
+use plugin::{prelude::*, write_json};
+use plugin_cargo::repo::{local_base_dir, Repo};
 use std::sync::LazyLock;
 
 static DOCS_URL: LazyLock<String> = LazyLock::new(|| {
