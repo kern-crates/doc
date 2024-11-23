@@ -2,6 +2,12 @@
 name = "os-checker-plugin-docs"
 version = "0.1.0"
 edition = "2021"
+license = "MIT"
+exclude = [".github", "*.json"]
+description = """
+A plugin for os-checker to generate rustdocs for all checked packages from latest commit.
+"""
+repository = "https://github.com/os-checker/docs"
 
 [dependencies]
 serde = { version = "1", features = ["derive"] }
