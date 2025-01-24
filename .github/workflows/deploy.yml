@@ -8,6 +8,7 @@ on:
 
 env:
   RUST_LOG: info
+  GH_TOKEN: ${{ github.GH_TOKEN }}
   CARGO_TERM_COLOR: always
   DOCS_URL: ${{ vars.DOCS_URL }}
   OS_CHECKER_CONFIGS: repos-default.json repos-ui.json repos.json
