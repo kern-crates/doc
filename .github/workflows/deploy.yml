@@ -31,6 +31,10 @@ jobs:
 
       - name: Install os-checker
         run: |
+          # hack: install cargo-audit
+          gh release download --clobber -R os-checker/database precompiled-checkers -p checkers.tar.xz
+          tar -xvJf checkers.tar.xz -C ~/.cargo/bin/
+
           gh release download -R kern-crates/.github -p os-checker_config.json
           # temporarily disable qclic/e1000e-frame
           jq 'del(."qclic/e1000e-frame")' os-checker_config.json > repos-default.json
