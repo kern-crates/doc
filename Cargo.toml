@@ -30,7 +30,7 @@ tracing-error = "0.2"
 
 plugin = { version = "0.1.3", package = "os-checker-plugin" }
 # FIXME: 将 Repo 功能移至 plugin，这样就不需要 plugin_cargo
-plugin_cargo = { version = "0.1.1", package = "os-checker-plugin-cargo" }
+plugin_cargo = { version = "0.1.4", package = "os-checker-plugin-cargo" }
 
 # The profile that 'dist' will build with
 [profile.dist]
