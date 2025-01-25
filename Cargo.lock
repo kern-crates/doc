@@ -484,7 +484,7 @@ dependencies = [
 
 [[package]]
 name = "os-checker-plugin-docs"
-version = "0.1.0"
+version = "0.1.1"
 dependencies = [
  "camino",
  "cargo_metadata 0.19.0",
